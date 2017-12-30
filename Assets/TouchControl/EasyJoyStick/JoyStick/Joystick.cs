@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System;
 
 [RequireComponent(typeof(RectTransform))]
 public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
@@ -12,7 +10,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     // limit the drag range
     public float dragRadius = 65.0f;
     // the rate of rollback
-    public float resetRate = 15.0f;
+    public float rollbackRate = 15.0f;
     // controll the alpha of canvas when pressed or released
     public JoystickAlphaControll canvasAlpha;
 
@@ -80,14 +78,18 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         {
             if (stick.anchoredPosition.magnitude > Mathf.Epsilon) // the smallest distance of movement of finger
             {
-                stick.anchoredPosition -= new Vector2(stick.anchoredPosition.x * resetRate, stick.anchoredPosition.y * resetRate) * Time.deltaTime;
+                stick.anchoredPosition -= stick.anchoredPosition * rollbackRate * Time.deltaTime;
             }
-            //shouldRollback = false;
+            else
+            {
+                shouldRollback = false;
+            }
         }
         if (isEnable)
         {
             EnableJoystick();
-        } else
+        }
+        else
         {
             DisableJoystick();
         }

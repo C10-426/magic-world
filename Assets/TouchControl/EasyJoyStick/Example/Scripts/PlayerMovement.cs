@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public float speed = 5;
     public Joystick moveJoy;
-    public Transform gun;
+    //public Transform gun;
 
     private Rigidbody player;
 
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             player.velocity = moveJoy.MoveInput() * speed;           //Move rigidbody;
             moveJoy.Rotate(transform, 15.0F);                           //Rotate rigidbody;
-            moveJoy.Rotate(gun, 15.0F);								//Rotate gun;
+            //moveJoy.Rotate(gun, 15.0F);								//Rotate gun;
         }
     }
 

@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 11100000}
   - component: {fileID: 9500000}
   m_Layer: 0
-  m_Name: Warrior_example3
+  m_Name: hero_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1827,7 +1827,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100072}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ba3eb812206ddad4e8412a1ae708d521, type: 3}
   m_Controller: {fileID: 9100000, guid: 97f49782ef8939c44bc71a0585a115a1, type: 2}
   m_CullingMode: 1

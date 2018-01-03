@@ -3948,7 +3948,7 @@ MeshCollider:
   m_GameObject: {fileID: 311250099}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 1
   m_InflateMesh: 0
@@ -5139,7 +5139,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b2d5d47b9587c4647b820679009f6594, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.8718761
+      value: 0.8718762
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b2d5d47b9587c4647b820679009f6594, type: 2}
       propertyPath: m_LocalRotation.z
@@ -5147,7 +5147,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b2d5d47b9587c4647b820679009f6594, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.4897264
+      value: 0.48972642
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b2d5d47b9587c4647b820679009f6594, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -5612,7 +5612,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503469662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -305, y: -87.18126, z: 0}
+  m_LocalPosition: {x: -305, y: -49.137924, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2104555870}
@@ -29539,8 +29539,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2064181427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 651, y: 296.5, z: 0}
-  m_LocalScale: {x: 1.6275, y: 1.6275, z: 1.6275}
+  m_LocalPosition: {x: 290, y: 104.5, z: 0}
+  m_LocalScale: {x: 0.725, y: 0.725, z: 0.725}
   m_Children:
   - {fileID: 503469663}
   m_Father: {fileID: 0}

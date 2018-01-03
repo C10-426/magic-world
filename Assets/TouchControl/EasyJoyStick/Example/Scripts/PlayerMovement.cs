@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -9,10 +10,15 @@ public class PlayerMovement : MonoBehaviour {
     //public Transform gun;
 
     private Rigidbody player;
+	private Animation animations;
 
     void Start()
     {
         player = GetComponent<Rigidbody>();
+		animations = GetComponent<Animation> ();
+		moveJoy.OnStartJoystickMovement += HandleStartMovement;
+		moveJoy.OnJoystickMovement += HandleMovement;
+		moveJoy.OnEndJoystickMovement += HandleEndMovement;
     }
 
     void FixedUpdate()
@@ -25,4 +31,33 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+	void HandleStartMovement(Joystick sender, Vector2 vector)
+	{
+		if (moveJoy != null && animations != null) {
+			if (!animations.IsPlaying ("RunFront")) {
+				animations.Stop ();
+				animations.Play ("RunFront");
+			}
+		}
+	}
+
+	void HandleEndMovement(Joystick sender, Vector2 vector) 
+	{
+		if (moveJoy != null && animations != null) {
+			if (!animations.IsPlaying ("Idle")) {
+				animations.Stop ();
+				animations.Play ("Idle");
+			}
+		}
+	}
+
+	void HandleMovement (Joystick sender, Vector2 vector)
+	{
+		if (moveJoy != null && animations != null) {
+			if (!animations.IsPlaying("RunFront")) {
+				animations.Stop ();
+				animations.Play ("RunFront");
+			}
+		}
+	}
 }

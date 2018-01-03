@@ -5612,7 +5612,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503469662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -305, y: -49.137924, z: 0}
+  m_LocalPosition: {x: -305, y: -87.18126, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2104555870}
@@ -6557,7 +6557,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400072, guid: 06eabc6be2bfb46aea5abe55c84e8bc0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 400072, guid: 06eabc6be2bfb46aea5abe55c84e8bc0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6631,21 +6631,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   moveJoy: {fileID: 503469665}
---- !u!54 &591086390
-Rigidbody:
+--- !u!143 &591086390
+CharacterController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 591086388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
+  m_Height: 1.2
+  m_Radius: 0.25
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.15
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!4 &591086393 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400072, guid: 06eabc6be2bfb46aea5abe55c84e8bc0, type: 2}
@@ -8175,6 +8177,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 722493645}
+  - component: {fileID: 722493646}
   m_Layer: 0
   m_Name: TILES
   m_TagString: Untagged
@@ -8224,6 +8227,20 @@ Transform:
   m_Father: {fileID: 311250103}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &722493646
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722493644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!4 &727476541 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 8089ee1f6ba4d774f97c7256b57c595c, type: 2}
@@ -8954,6 +8971,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 759712595}
+  - component: {fileID: 759712596}
   m_Layer: 0
   m_Name: BRIDGES
   m_TagString: Untagged
@@ -8976,6 +8994,20 @@ Transform:
   m_Father: {fileID: 311250103}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &759712596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759712594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!1001 &760316673
 Prefab:
   m_ObjectHideFlags: 0
@@ -11749,6 +11781,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 952683211}
+  - component: {fileID: 952683212}
   m_Layer: 0
   m_Name: BARS
   m_TagString: Untagged
@@ -11774,6 +11807,20 @@ Transform:
   m_Father: {fileID: 311250103}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &952683212
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952683210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!1001 &953390672
 Prefab:
   m_ObjectHideFlags: 0
@@ -19755,6 +19802,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1389709262}
+  - component: {fileID: 1389709263}
   m_Layer: 0
   m_Name: DEBRIS
   m_TagString: Untagged
@@ -19869,6 +19917,20 @@ Transform:
   m_Father: {fileID: 311250103}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1389709263
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1389709261}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1389842713
 Prefab:
   m_ObjectHideFlags: 0
@@ -21420,6 +21482,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1537466365}
+  - component: {fileID: 1537466366}
   m_Layer: 0
   m_Name: DOORS
   m_TagString: Untagged
@@ -21447,6 +21510,20 @@ Transform:
   m_Father: {fileID: 311250103}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1537466366
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537466364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1539059947
 Prefab:
   m_ObjectHideFlags: 0
@@ -23477,13 +23554,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1655122449}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.31412354, y: -0, z: -0, w: 0.9493822}
   m_LocalPosition: {x: 28, y: 3.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 36.616, y: 0, z: 0}
 --- !u!114 &1655122455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29462,8 +29539,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2064181427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 290, y: 104.5, z: 0}
-  m_LocalScale: {x: 0.725, y: 0.725, z: 0.725}
+  m_LocalPosition: {x: 651, y: 296.5, z: 0}
+  m_LocalScale: {x: 1.6275, y: 1.6275, z: 1.6275}
   m_Children:
   - {fileID: 503469663}
   m_Father: {fileID: 0}

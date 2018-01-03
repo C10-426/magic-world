@@ -9,12 +9,12 @@ public class PlayerMovement : MonoBehaviour {
     public Joystick moveJoy;
     //public Transform gun;
 
-    private Rigidbody player;
+    private CharacterController player;
 	private Animation animations;
 
     void Start()
     {
-        player = GetComponent<Rigidbody>();
+        player = GetComponent<CharacterController>();
 		animations = GetComponent<Animation> ();
 		moveJoy.OnStartJoystickMovement += HandleStartMovement;
 		moveJoy.OnJoystickMovement += HandleMovement;
@@ -25,9 +25,12 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (moveJoy != null)
         {
-            player.velocity = moveJoy.MoveInput() * speed;           //Move rigidbody;
+			Vector3 movement = moveJoy.MoveInput() * speed;
+			player.SimpleMove(movement);
             moveJoy.Rotate(transform, 15.0F);                           //Rotate rigidbody;
-            //moveJoy.Rotate(gun, 15.0F);								//Rotate gun;
+                                                                        //moveJoy.Rotate(gun, 15.0F);								//Rotate gun;
+
+            
         }
     }
 

@@ -3968,7 +3968,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 311250099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.1, y: -1, z: 0}
+  m_LocalPosition: {x: 45, y: -1, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 952683211}
@@ -5611,14 +5611,14 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503469662}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -305, y: -49.137924, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: -305, y: -153.63731, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2104555870}
   m_Father: {fileID: 2064181431}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 95, y: 95}
@@ -6553,7 +6553,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400072, guid: 06eabc6be2bfb46aea5abe55c84e8bc0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 28
+      value: 27.038
       objectReference: {fileID: 0}
     - target: {fileID: 400072, guid: 06eabc6be2bfb46aea5abe55c84e8bc0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -23531,7 +23531,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 45
   orthographic: 0
   orthographic size: 4
   m_Depth: -1
@@ -23554,13 +23554,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1655122449}
-  m_LocalRotation: {x: 0.31412354, y: -0, z: -0, w: 0.9493822}
-  m_LocalPosition: {x: 28, y: 3.5, z: 1}
+  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
+  m_LocalPosition: {x: 20, y: 10, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 36.616, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!114 &1655122455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23573,7 +23573,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 591086393}
-  ZOffset: -3
+  joystick: {fileID: 503469665}
+  zoomSpeed: 30
+  rotateSpeed: 1
+  distance: 15
 --- !u!4 &1655171748 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 202d9039f0003ee44bfe2596b3c1cef1, type: 2}
@@ -29539,8 +29542,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2064181427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 290, y: 104.5, z: 0}
-  m_LocalScale: {x: 0.725, y: 0.725, z: 0.725}
+  m_LocalPosition: {x: 477, y: 296.5, z: 0}
+  m_LocalScale: {x: 1.1925, y: 1.1925, z: 1.1925}
   m_Children:
   - {fileID: 503469663}
   m_Father: {fileID: 0}

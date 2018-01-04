@@ -107,6 +107,11 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         canvasGroup.interactable = canvasGroup.blocksRaycasts = false;
     }
 
+    public void Rotate(float newZAngle)
+    {
+        transform.Rotate(transform.rotation.x, transform.rotation.y, newZAngle - transform.rotation.z);
+    }
+
     public Vector3 MoveInput()
     {
         return new Vector3(JoystickCoordinates.x, 0, JoystickCoordinates.y);

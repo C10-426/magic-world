@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<workspace name="magicworld" folder="behaviac" export="..\Assets\Resource\behaviac" language="cs" version="3">
+  <export>
+    <cs>
+      <isexported>True</isexported>
+      <exportfilecount>1</exportfilecount>
+      <folder>../../Assets/Scripts/behaviac</folder>
+    </cs>
+  </export>
+</workspace>

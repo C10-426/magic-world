@@ -7,60 +7,75 @@ public class PlayerMovement : MonoBehaviour {
 
     public float speed = 5;
     public Joystick moveJoy;
+	public AttackController attack;
     //public Transform gun;
 
     private CharacterController player;
-	private Animation animations;
+	//private Animation animations;
+	private Animator animator;
+
+	// readonly
+	//private static readonly string ANIMATION_IDLE = "Idle";
+	//private static readonly string ANIMATION_RUN = "RunFront";
+	private static readonly string ANIMATOR_RUN = "Run";
+	private static readonly string ANIMATOR_ATTACK = "Attack";
+	private static readonly string ANIMATOR_IDLE = "Idle";
 
     void Start()
     {
         player = GetComponent<CharacterController>();
-		animations = GetComponent<Animation> ();
+		//animations = GetComponent<Animation> ();
+		animator = GetComponent<Animator> ();
 		moveJoy.OnStartJoystickMovement += HandleStartMovement;
 		moveJoy.OnJoystickMovement += HandleMovement;
 		moveJoy.OnEndJoystickMovement += HandleEndMovement;
+		attack.OnAttackClicked += HandleAttack;
     }
 
     void FixedUpdate()
     {
-        if (moveJoy != null)
-        {
+        if (moveJoy != null) {
 			Vector3 movement = moveJoy.MoveInput() * speed;
 			player.SimpleMove(movement);
-            moveJoy.Rotate(transform, 15.0F);                           //Rotate rigidbody;
-                                                                        //moveJoy.Rotate(gun, 15.0F);								//Rotate gun;
-
-            
+            moveJoy.Rotate(transform, 15.0F);                           //Rotate rigidbody; 
         }
     }
 
 	void HandleStartMovement(Joystick sender, Vector2 vector)
 	{
-		if (moveJoy != null && animations != null) {
-			if (!animations.IsPlaying ("RunFront")) {
-				animations.Stop ();
-				animations.Play ("RunFront");
-			}
+		if (animator != null) {
+			animator.SetBool (ANIMATOR_RUN, true);
 		}
 	}
 
 	void HandleEndMovement(Joystick sender, Vector2 vector) 
 	{
-		if (moveJoy != null && animations != null) {
-			if (!animations.IsPlaying ("Idle")) {
-				animations.Stop ();
-				animations.Play ("Idle");
-			}
+		if (animator != null) {
+			animator.SetBool (ANIMATOR_RUN, false);
+			animator.SetTrigger (ANIMATOR_IDLE);
 		}
 	}
 
 	void HandleMovement (Joystick sender, Vector2 vector)
 	{
-		if (moveJoy != null && animations != null) {
-			if (!animations.IsPlaying("RunFront")) {
-				animations.Stop ();
-				animations.Play ("RunFront");
-			}
+		if (animator != null) {
+			animator.SetBool (ANIMATOR_RUN, true);
 		}
 	}
+
+	void HandleAttack()
+	{
+		if (animator != null) {
+			animator.SetTrigger (ANIMATOR_ATTACK);
+		}
+	}
+
+//	private bool isPlayed(string animatorName)
+//	{
+//		AnimatorStateInfo animatorInfo = animator.GetCurrentAnimatorStateInfo (0);
+//		if (animatorInfo.IsName (animatorName)) {
+//			return true;
+//		}
+//		return false;
+//	}
 }

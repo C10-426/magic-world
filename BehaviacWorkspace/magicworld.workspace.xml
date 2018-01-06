@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<workspace name="magicworld" folder="behaviac" export="..\Assets\Resources\behaviac" language="cs" version="3">
+<workspace name="magicworld" folder="behaviac" export="..\Assets\Resources\behaviac\exported" language="cs" version="3">
   <export>
     <cs>
       <isexported>True</isexported>

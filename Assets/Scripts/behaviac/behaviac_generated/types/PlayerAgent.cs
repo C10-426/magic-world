@@ -16,6 +16,36 @@ public class PlayerAgent : behaviac.Agent
 ///<<< BEGIN WRITING YOUR CODE PlayerAgent
 ///<<< END WRITING YOUR CODE
 {
+	private bool canSeeEnemy = false;
+	public void _set_canSeeEnemy(bool value)
+	{
+		canSeeEnemy = value;
+	}
+	public bool _get_canSeeEnemy()
+	{
+		return canSeeEnemy;
+	}
+
+	private float distanceToEnemy = 0f;
+	public void _set_distanceToEnemy(float value)
+	{
+		distanceToEnemy = value;
+	}
+	public float _get_distanceToEnemy()
+	{
+		return distanceToEnemy;
+	}
+
+	private bool isMoving = false;
+	public void _set_isMoving(bool value)
+	{
+		isMoving = value;
+	}
+	public bool _get_isMoving()
+	{
+		return isMoving;
+	}
+
 	public void Move()
 	{
 ///<<< BEGIN WRITING YOUR CODE Move
@@ -70,6 +100,7 @@ void Awake()
     InitBehavic();
 
     InitPlayer();
+    // _set_isMoving(true);
 }
 
 behaviac.EBTStatus _status = behaviac.EBTStatus.BT_RUNNING;

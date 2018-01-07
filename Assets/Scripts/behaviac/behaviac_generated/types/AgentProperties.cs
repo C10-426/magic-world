@@ -188,7 +188,7 @@ namespace behaviac
 
 		public override bool Load()
 		{
-			AgentMeta.TotalSignature = 2813010921;
+			AgentMeta.TotalSignature = 2703681498;
 
 			AgentMeta meta;
 
@@ -203,8 +203,11 @@ namespace behaviac
 			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
 
 			// PlayerAgent
-			meta = new AgentMeta(2376853173);
+			meta = new AgentMeta(1945566515);
 			AgentMeta._AgentMetas_[509666443] = meta;
+			meta.RegisterMemberProperty(3548863739, new CMemberProperty<bool>("canSeeEnemy", delegate(Agent self, bool value) { ((PlayerAgent)self)._set_canSeeEnemy(value); }, delegate(Agent self) { return ((PlayerAgent)self)._get_canSeeEnemy(); }));
+			meta.RegisterMemberProperty(1291473604, new CMemberProperty<float>("distanceToEnemy", delegate(Agent self, float value) { ((PlayerAgent)self)._set_distanceToEnemy(value); }, delegate(Agent self) { return ((PlayerAgent)self)._get_distanceToEnemy(); }));
+			meta.RegisterMemberProperty(1090903413, new CMemberProperty<bool>("isMoving", delegate(Agent self, bool value) { ((PlayerAgent)self)._set_isMoving(value); }, delegate(Agent self) { return ((PlayerAgent)self)._get_isMoving(); }));
 			meta.RegisterMethod(1045109914, new CAgentStaticMethodVoid<string>(delegate(string param0) { PlayerAgent.LogMessage(param0); }));
 			meta.RegisterMethod(3042982998, new CAgentMethodVoid(delegate(Agent self) { ((PlayerAgent)self).Move(); }));
 			meta.RegisterMethod(2521019022, new CMethod_behaviac_Agent_VectorAdd());
@@ -213,8 +216,20 @@ namespace behaviac
 			meta.RegisterMethod(505785840, new CMethod_behaviac_Agent_VectorLength());
 			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
 
+			// MasterAgent
+			meta = new AgentMeta(2731226768);
+			AgentMeta._AgentMetas_[2505569052] = meta;
+			meta.RegisterMemberProperty(1090903413, new CMemberProperty<bool>("isMoving", delegate(Agent self, bool value) { ((MasterAgent)self)._set_isMoving(value); }, delegate(Agent self) { return ((MasterAgent)self)._get_isMoving(); }));
+			meta.RegisterMethod(1045109914, new CAgentStaticMethodVoid<string>(delegate(string param0) { MasterAgent.LogMessage(param0); }));
+			meta.RegisterMethod(2521019022, new CMethod_behaviac_Agent_VectorAdd());
+			meta.RegisterMethod(2306090221, new CMethod_behaviac_Agent_VectorClear());
+			meta.RegisterMethod(3483755530, new CMethod_behaviac_Agent_VectorContains());
+			meta.RegisterMethod(505785840, new CMethod_behaviac_Agent_VectorLength());
+			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
+
 			AgentMeta.Register<behaviac.Agent>("behaviac.Agent");
 			AgentMeta.Register<PlayerAgent>("PlayerAgent");
+			AgentMeta.Register<MasterAgent>("MasterAgent");
 			return true;
 		}
 
@@ -222,6 +237,7 @@ namespace behaviac
 		{
 			AgentMeta.UnRegister<behaviac.Agent>("behaviac.Agent");
 			AgentMeta.UnRegister<PlayerAgent>("PlayerAgent");
+			AgentMeta.UnRegister<MasterAgent>("MasterAgent");
 			return true;
 		}
 	}

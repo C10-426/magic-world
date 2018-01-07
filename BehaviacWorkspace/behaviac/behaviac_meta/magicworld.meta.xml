@@ -26,7 +26,13 @@
       </Method>
     </agent>
     <agent classfullname="PlayerAgent" base="behaviac::Agent" DisplayName="PlayerAgent" Desc="PlayerAgent" IsRefType="true" IsCustomized="true">
+      <Member Name="isMoving" DisplayName="isMoving" Desc="是否正在移动" Class="PlayerAgent" Type="bool" TypeFullName="System.Boolean" defaultvalue="false" Static="false" Public="false" Readonly="false" />
+      <Member Name="canSeeEnemy" DisplayName="canSeeEnemy" Desc="能否看到敌人" Class="PlayerAgent" Type="bool" TypeFullName="System.Boolean" defaultvalue="false" Static="false" Public="false" Readonly="false" />
+      <Member Name="distanceToEnemy" DisplayName="distanceToEnemy" Desc="离敌人的距离" Class="PlayerAgent" Type="float" TypeFullName="System.Single" defaultvalue="0" Static="false" Public="false" Readonly="false" />
       <Method Name="Move" DisplayName="Move" Desc="Move" Class="PlayerAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="true" istask="false" />
+    </agent>
+    <agent classfullname="MasterAgent" base="behaviac::Agent" DisplayName="MasterAgent" Desc="MasterAgent" IsRefType="true" IsCustomized="true">
+      <Member Name="isMoving" DisplayName="isMoving" Desc="是否正在移动" Class="MasterAgent" Type="bool" TypeFullName="System.Boolean" defaultvalue="false" Static="false" Public="false" Readonly="false" />
     </agent>
   </agents>
   <instances />

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     public float speed = 5;
     public Joystick moveJoy;
 	public AttackController attack;
+    public PlayerSkillsController skills;
     //public Transform gun;
 
     private CharacterController player;
@@ -26,10 +27,7 @@ public class PlayerMovement : MonoBehaviour {
         player = GetComponent<CharacterController>();
 		//animations = GetComponent<Animation> ();
 		animator = GetComponent<Animator> ();
-		moveJoy.OnStartJoystickMovement += HandleStartMovement;
-		moveJoy.OnJoystickMovement += HandleMovement;
-		moveJoy.OnEndJoystickMovement += HandleEndMovement;
-		attack.OnAttackClicked += HandleAttack;
+        this.AddEventListener();
     }
 
     void FixedUpdate()
@@ -39,6 +37,17 @@ public class PlayerMovement : MonoBehaviour {
 			player.SimpleMove(movement);
             moveJoy.Rotate(transform, 15.0F);                           //Rotate rigidbody; 
         }
+    }
+
+    void AddEventListener() {
+        // movement
+        moveJoy.OnStartJoystickMovement += HandleStartMovement;
+        moveJoy.OnJoystickMovement += HandleMovement;
+        moveJoy.OnEndJoystickMovement += HandleEndMovement;
+        // attack
+        attack.OnAttackClicked += HandleAttack;
+        // skill
+        skills.OnPlayerSkillClicked += HandleSkill;
     }
 
 	void HandleStartMovement(Joystick sender, Vector2 vector)
@@ -69,6 +78,12 @@ public class PlayerMovement : MonoBehaviour {
 			animator.SetTrigger (ANIMATOR_ATTACK);
 		}
 	}
+
+    void HandleSkill(SkillData skillData) {
+        if (null != skillData.getTrigger()) {
+            animator.SetTrigger(skillData.getTrigger());
+        }
+    }
 
 //	private bool isPlayed(string animatorName)
 //	{

@@ -7163,6 +7163,7 @@ MonoBehaviour:
   speed: 5
   moveJoy: {fileID: 503469665}
   attack: {fileID: 1433084248}
+  skills: {fileID: 154370569}
 --- !u!143 &591086390
 CharacterController:
   m_ObjectHideFlags: 0

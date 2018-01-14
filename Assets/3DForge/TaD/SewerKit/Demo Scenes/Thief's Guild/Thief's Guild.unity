@@ -4698,6 +4698,7 @@ MonoBehaviour:
   m_debug_in_exec: 0
   m_debug_count: 0
   characterType: 0
+  property: {fileID: 0}
   alertRadius: 0
   attackRange: 0
   chaseRadius: 0
@@ -6013,6 +6014,8 @@ GameObject:
   - component: {fileID: 485413181}
   - component: {fileID: 485413180}
   - component: {fileID: 485413179}
+  - component: {fileID: 485413182}
+  - component: {fileID: 485413183}
   m_Layer: 0
   m_Name: raptor
   m_TagString: Untagged
@@ -6083,6 +6086,43 @@ RectTransform:
   m_AnchoredPosition: {x: 30.119904, y: 0.16334939}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &485413182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485413178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74b0457ba843d4478546026880db06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_priority: 0
+  m_contextId: 0
+  m_debug_in_exec: 0
+  m_debug_count: 0
+  characterType: 2
+  property: {fileID: 485413183}
+--- !u!114 &485413183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485413178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810d766af83ed914d81c58f140053676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_priority: 0
+  m_contextId: 0
+  m_debug_in_exec: 0
+  m_debug_count: 0
+  damage: 20
+  defanse: 12
+  hp: 100
+  level: 0
+  mp: 80
 --- !u!1001 &492458048
 Prefab:
   m_ObjectHideFlags: 0

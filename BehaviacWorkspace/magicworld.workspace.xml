@@ -6,5 +6,8 @@
       <exportfilecount>1</exportfilecount>
       <folder>../../Assets/Scripts/behaviac</folder>
     </cs>
+    <bson>
+      <isexported>True</isexported>
+    </bson>
   </export>
 </workspace>

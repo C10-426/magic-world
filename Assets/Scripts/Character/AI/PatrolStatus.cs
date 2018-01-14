@@ -4,10 +4,13 @@
 
 namespace GameGeek.Character
 {
-	public enum CharacterType
+	public enum PatrolStatus
 	{
-		CT_NULL,
-		CT_PLAYER,
-		CT_MONSTER,
+		IDLE = 0,
+		WANDER = 1,
+		WARN = 2,
+		CHASE = 3,
+		BATTLE = 3,
+		RETURN = 4,
 	}
 }

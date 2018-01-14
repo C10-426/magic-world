@@ -1,6 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <meta>
-  <types />
+  <types>
+    <enumtype Type="GameGeek::Character::CharacterType" Namespace="GameGeek::Character" IsCustomized="true" ExportLocation="../Assets/Scripts/Character" DisplayName="CharacterType" Desc="CharacterType">
+      <enum NativeValue="GameGeek::Character::CT_NULL" Value="CT_NULL" DisplayName="CT_NULL" Desc="" MemberValue="-1" />
+      <enum NativeValue="GameGeek::Character::CT_PLAYER" Value="CT_PLAYER" DisplayName="CT_PLAYER" Desc="" MemberValue="-1" />
+      <enum NativeValue="GameGeek::Character::CT_MONSTER" Value="CT_MONSTER" DisplayName="CT_MONSTER" Desc="" MemberValue="-1" />
+    </enumtype>
+    <enumtype Type="GameGeek::Character::GenderType" Namespace="GameGeek::Character" IsCustomized="true" ExportLocation="../Assets/Scripts/Character" DisplayName="GenderType" Desc="GenderType">
+      <enum NativeValue="GameGeek::Character::UNKNOW" Value="UNKNOW" DisplayName="UNKNOW" Desc="" MemberValue="0" />
+      <enum NativeValue="GameGeek::Character::GT_FEMALE" Value="GT_FEMALE" DisplayName="GT_FEMALE" Desc="" MemberValue="0" />
+      <enum NativeValue="GameGeek::Character::GT_MALE" Value="GT_MALE" DisplayName="GT_MALE" Desc="" MemberValue="1" />
+    </enumtype>
+    <enumtype Type="GameGeek::Character::SkillStatus" Namespace="GameGeek::Character" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Skill" DisplayName="SkillStatus" Desc="SkillStatus">
+      <enum NativeValue="GameGeek::Character::Skill::SS_CAN_CAST" Value="SS_CAN_CAST" DisplayName="SS_CAN_CAST" Desc="" MemberValue="0" />
+      <enum NativeValue="GameGeek::Character::Skill::SS_NOT_ENOUGH_MP" Value="SS_NOT_ENOUGH_MP" DisplayName="SS_NOT_ENOUGH_MP" Desc="" MemberValue="1" />
+      <enum NativeValue="GameGeek::Character::Skill::SS_IN_CD" Value="SS_IN_CD" DisplayName="SS_IN_CD" Desc="" MemberValue="2" />
+      <enum NativeValue="GameGeek::Character::Skill::SS_IN_RELEASING" Value="SS_IN_RELEASING" DisplayName="SS_IN_RELEASING" Desc="" MemberValue="3" />
+      <enum NativeValue="GameGeek::Character::Skill::SS_NO_ENEMY" Value="SS_NO_ENEMY" DisplayName="SS_NO_ENEMY" Desc="" MemberValue="4" />
+    </enumtype>
+    <enumtype Type="GameGeek::Character::SkillType" Namespace="GameGeek::Character" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Skill" DisplayName="SkillType" Desc="SkillType">
+      <enum NativeValue="GameGeek::Character::Skill::CT_NULL" Value="CT_NULL" DisplayName="CT_NULL" Desc="" MemberValue="1" />
+      <enum NativeValue="GameGeek::Character::Skill::CT_MAGIC" Value="CT_MAGIC" DisplayName="CT_MAGIC" Desc="" MemberValue="0" />
+      <enum NativeValue="GameGeek::Character::Skill::CT_PHYSICAL" Value="CT_PHYSICAL" DisplayName="CT_PHYSICAL" Desc="" MemberValue="1" />
+    </enumtype>
+    <enumtype Type="GameGeek::Character::PatrolStatus" Namespace="GameGeek::Character" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/AI" DisplayName="PatrolStatus" Desc="PatrolStatus">
+      <enum NativeValue="GameGeek::Character::IDLE" Value="IDLE" DisplayName="IDLE" Desc="" MemberValue="0" />
+      <enum NativeValue="GameGeek::Character::WANDER" Value="WANDER" DisplayName="WANDER" Desc="" MemberValue="1" />
+      <enum NativeValue="GameGeek::Character::WARN" Value="WARN" DisplayName="WARN" Desc="" MemberValue="2" />
+      <enum NativeValue="GameGeek::Character::CHASE" Value="CHASE" DisplayName="CHASE" Desc="" MemberValue="3" />
+      <enum NativeValue="GameGeek::Character::BATTLE" Value="BATTLE" DisplayName="BATTLE" Desc="" MemberValue="3" />
+      <enum NativeValue="GameGeek::Character::RETURN" Value="RETURN" DisplayName="RETURN" Desc="" MemberValue="4" />
+    </enumtype>
+    <struct Type="GameGeek::Character::CharacterProperty" Namespace="GameGeek::Character" Base="" IsCustomized="true" ExportLocation="../Assets/Scripts/Character" DisplayName="CharacterProperty" Desc="CharacterProperty">
+      <Member Name="hp" DisplayName="hp" Desc="hp" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
+      <Member Name="mp" DisplayName="mp" Desc="mp" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
+      <Member Name="defanse" DisplayName="defanse" Desc="defanse" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
+      <Member Name="atk" DisplayName="atk" Desc="atk" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
+      <Member Name="level" DisplayName="level" Desc="level" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
+    </struct>
+    <struct Type="GameGeek::Character::PlayerCharacterProperty" Namespace="GameGeek::Character" Base="GameGeek::Character::CharacterProperty" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Player" DisplayName="PlayerCharacterProperty" Desc="PlayerCharacterProperty">
+      <Member Name="experience" DisplayName="experience" Desc="experience" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
+      <Member Name="gender" DisplayName="gender" Desc="gender" Type="GameGeek::Character::GenderType" TypeFullName="XMLPluginBehaviac.GameGeek_Character_GenderType" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
+      <Member Name="hp" DisplayName="hp" Desc="hp" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
+      <Member Name="mp" DisplayName="mp" Desc="mp" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
+      <Member Name="defanse" DisplayName="defanse" Desc="defanse" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
+      <Member Name="atk" DisplayName="atk" Desc="atk" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
+      <Member Name="level" DisplayName="level" Desc="level" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
+    </struct>
+  </types>
   <agents>
     <agent classfullname="behaviac::Agent" DisplayName="behaviac::Agent" Desc="behaviac::Agent" IsRefType="true" IsImplemented="true">
       <Method Name="VectorLength" DisplayName="VectorLength" Desc="VectorLength" Class="behaviac::Agent" ReturnType="int" ReturnTypeFullName="System.Int32" Static="true" Public="true" istask="false">
@@ -25,15 +72,27 @@
         <Param Name="param0" Type="const char*" TypeFullName="System.String" DisplayName="param0" Desc="param0" />
       </Method>
     </agent>
-    <agent classfullname="PlayerAgent" base="behaviac::Agent" DisplayName="PlayerAgent" Desc="PlayerAgent" IsRefType="true" IsCustomized="true">
-      <Member Name="isMoving" DisplayName="isMoving" Desc="是否正在移动" Class="PlayerAgent" Type="bool" TypeFullName="System.Boolean" defaultvalue="false" Static="false" Public="false" Readonly="false" />
-      <Member Name="canSeeEnemy" DisplayName="canSeeEnemy" Desc="能否看到敌人" Class="PlayerAgent" Type="bool" TypeFullName="System.Boolean" defaultvalue="false" Static="false" Public="false" Readonly="false" />
-      <Member Name="distanceToEnemy" DisplayName="distanceToEnemy" Desc="离敌人的距离" Class="PlayerAgent" Type="float" TypeFullName="System.Single" defaultvalue="0" Static="false" Public="false" Readonly="false" />
-      <Method Name="Move" DisplayName="Move" Desc="Move" Class="PlayerAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="true" istask="false" />
+    <agent classfullname="GameGeek::Character::Character" base="behaviac::Agent" DisplayName="Character" Desc="Character" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character">
+      <Member Name="characterType" DisplayName="characterType" Desc="characterType" Class="GameGeek::Character::Character" Type="GameGeek::Character::CharacterType" TypeFullName="XMLPluginBehaviac.GameGeek_Character_CharacterType" defaultvalue="CT_NULL" Static="false" Public="true" Readonly="false" />
+      <Member Name="property" DisplayName="property" Desc="property" Class="GameGeek::Character::Character" Type="GameGeek::Character::CharacterProperty*" TypeFullName="XMLPluginBehaviac.GameGeek_Character_CharacterProperty" defaultvalue="{hp=0;mp=0;defanse=0;atk=0;level=0;}" Static="false" Public="true" Readonly="false" />
     </agent>
-    <agent classfullname="MasterAgent" base="behaviac::Agent" DisplayName="MasterAgent" Desc="MasterAgent" IsRefType="true" IsCustomized="true">
-      <Member Name="isMoving" DisplayName="isMoving" Desc="是否正在移动" Class="MasterAgent" Type="bool" TypeFullName="System.Boolean" defaultvalue="false" Static="false" Public="false" Readonly="false" />
+    <agent classfullname="GameGeek::Character::PatrolAgent" base="GameGeek::Character::Character" DisplayName="PatrolAgent" Desc="PatrolAgent" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/AI">
+      <Member Name="walkSpeed" DisplayName="walkSpeed" Desc="walkSpeed" Class="GameGeek::Character::PatrolAgent" Type="float" TypeFullName="System.Single" defaultvalue="1" Static="false" Public="true" Readonly="false" />
+      <Member Name="runSpeed" DisplayName="runSpeed" Desc="runSpeed" Class="GameGeek::Character::PatrolAgent" Type="float" TypeFullName="System.Single" defaultvalue="3" Static="false" Public="true" Readonly="false" />
+      <Member Name="wanderRadius" DisplayName="wanderRadius" Desc="wanderRadius" Class="GameGeek::Character::PatrolAgent" Type="float" TypeFullName="System.Single" defaultvalue="0" Static="false" Public="true" Readonly="false" />
+      <Member Name="alertRadius" DisplayName="alertRadius" Desc="alertRadius" Class="GameGeek::Character::PatrolAgent" Type="float" TypeFullName="System.Single" defaultvalue="0" Static="false" Public="true" Readonly="false" />
+      <Member Name="defendRadius" DisplayName="defendRadius" Desc="defendRadius" Class="GameGeek::Character::PatrolAgent" Type="float" TypeFullName="System.Single" defaultvalue="0" Static="false" Public="true" Readonly="false" />
+      <Member Name="chaseRadius" DisplayName="chaseRadius" Desc="chaseRadius" Class="GameGeek::Character::PatrolAgent" Type="float" TypeFullName="System.Single" defaultvalue="0" Static="false" Public="true" Readonly="false" />
+      <Member Name="currentStatus" DisplayName="currentStatus" Desc="currentStatus" Class="GameGeek::Character::PatrolAgent" Type="GameGeek::Character::PatrolStatus" TypeFullName="XMLPluginBehaviac.GameGeek_Character_PatrolStatus" defaultvalue="IDLE" Static="false" Public="true" Readonly="false" />
+      <Member Name="attackRange" DisplayName="attackRange" Desc="attackRange" Class="GameGeek::Character::PatrolAgent" Type="float" TypeFullName="System.Single" defaultvalue="0" Static="false" Public="true" Readonly="false" />
+      <Member Name="turnSpeed" DisplayName="turnSpeed" Desc="turnSpeed" Class="GameGeek::Character::PatrolAgent" Type="float" TypeFullName="System.Single" defaultvalue="0.1" Static="false" Public="true" Readonly="false" />
+      <Method Name="Wander" DisplayName="Wander" Desc="Wander" Class="GameGeek::Character::PatrolAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="true" istask="false" />
+      <Method Name="Chase" DisplayName="Chase" Desc="Chase" Class="GameGeek::Character::PatrolAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="true" istask="false" />
+      <Method Name="ReturnBack" DisplayName="ReturnBack" Desc="ReturnBack" Class="GameGeek::Character::PatrolAgent" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="true" istask="false" />
+      <Method Name="CalculateNewPatrolState" DisplayName="CalculateNewPatrolState" Desc="CalculateNewPatrolState" Class="GameGeek::Character::PatrolAgent" ReturnType="GameGeek::Character::PatrolStatus" ReturnTypeFullName="XMLPluginBehaviac.GameGeek_Character_PatrolStatus" Static="false" Public="true" istask="false" />
     </agent>
+    <agent classfullname="GameGeek::Character::CharacterPlayer" base="GameGeek::Character::Character" DisplayName="CharacterPlayer" Desc="CharacterPlayer" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Player" />
+    <agent classfullname="GameGeek::Character::CharacterMonster" base="GameGeek::Character::Character" DisplayName="CharacterMonster" Desc="CharacterMonster" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Monster" />
   </agents>
   <instances />
 </meta>

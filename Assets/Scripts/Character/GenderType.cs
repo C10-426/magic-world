@@ -4,10 +4,10 @@
 
 namespace GameGeek.Character
 {
-	public enum CharacterType
+	public enum GenderType
 	{
-		CT_NULL,
-		CT_PLAYER,
-		CT_MONSTER,
+		UNKNOW = 0,
+		GT_FEMALE = 0,
+		GT_MALE = 1,
 	}
 }

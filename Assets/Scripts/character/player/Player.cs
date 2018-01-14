@@ -1,5 +1,5 @@
-
-public class Player : CharacterMonster
+using GameGeek.Character;
+public class Player : CharacterPlayer
 {
 
 

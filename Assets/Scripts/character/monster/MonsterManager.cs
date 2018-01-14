@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using GameGeek.Character;
 public class MonsterManager
 {
     private static MonsterManager sInstance;

@@ -10,6 +10,3 @@ using System.Collections.Generic;
 // Customized enums
 // -------------------
 
-// -------------------
-// Customized structs
-// -------------------

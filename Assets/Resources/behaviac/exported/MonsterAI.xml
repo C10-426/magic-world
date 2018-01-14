@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: MonsterAI.xml-->
+<behavior name="MonsterAI" agenttype="GameGeek::Character::MonsterAI" version="5">
+  <node class="Sequence" id="0">
+    <node class="Condition" id="1">
+      <property Operator="Equal" />
+      <property Opl="Self.GameGeek::Character::MonsterAI::IsAlive()" />
+      <property Opr="const behaviac::EBTStatus BT_SUCCESS" />
+    </node>
+    <node class="Parallel" id="2">
+      <property ChildFinishPolicy="CHILDFINISH_LOOP" />
+      <property ExitPolicy="EXIT_ABORT_RUNNINGSIBLINGS" />
+      <property FailurePolicy="FAIL_ON_ONE" />
+      <property SuccessPolicy="SUCCEED_ON_ALL" />
+      <node class="DecoratorLoop" id="3">
+        <property Count="const int -1" />
+        <property DecorateWhenChildEnds="true" />
+        <property DoneWithinFrame="false" />
+        <node class="Condition" id="4">
+          <property Operator="Greater" />
+          <property Opl="int property.GameGeek::Character::CharacterProperty::hp" />
+          <property Opr="const int 0" />
+        </node>
+      </node>
+      <node class="DecoratorLoop" id="5">
+        <property Count="const int -1" />
+        <property DecorateWhenChildEnds="true" />
+        <property DoneWithinFrame="false" />
+        <node class="Selector" id="6">
+          <node class="Sequence" id="7">
+            <node class="Condition" id="8">
+              <property Operator="LessEqual" />
+              <property Opl="int property.GameGeek::Character::CharacterProperty::hp" />
+              <property Opr="const int 20" />
+            </node>
+            <node class="Action" id="9">
+              <property Method="Self.GameGeek::Character::MonsterAI::ShowAnimation()" />
+              <property ResultOption="BT_INVALID" />
+            </node>
+            <node class="Wait" id="10">
+              <property Time="const float 1.5" />
+            </node>
+            <node class="Action" id="11">
+              <property Method="Self.GameGeek::Character::MonsterAI::Seek()" />
+              <property ResultOption="BT_INVALID" />
+            </node>
+          </node>
+          <node class="Sequence" id="12">
+            <node class="Action" id="13">
+              <property Method="Self.GameGeek::Character::MonsterAI::CanSeeObject()" />
+              <property ResultOption="BT_INVALID" />
+            </node>
+            <node class="Condition" id="14">
+              <property Operator="Equal" />
+              <property Opl="Self.GameGeek::Character::MonsterAI::IsAlive()" />
+              <property Opr="const behaviac::EBTStatus BT_SUCCESS" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+</behavior>

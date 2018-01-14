@@ -11,9 +11,9 @@ public class CharacterConfig
         // property.mp = property.mpMaxLimit;
         property.hp = 100;
         property.mp = 80;
-        property.atk = 20;
+        property.damage = 20;
         // property.atkRange = 1.0f;
-        // property.defense = 12;
+        property.defanse = 12;
         // property.moveSpeed = 0.6f;
         return property;
     }

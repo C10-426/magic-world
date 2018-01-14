@@ -10,4 +10,328 @@ using System.Reflection;
 
 namespace behaviac
 {
+	// Source file: MonsterAI
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Condition_bt_MonsterAI_node1 : behaviac.Condition
+	{
+		public Condition_bt_MonsterAI_node1()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			behaviac.EBTStatus opl = ((GameGeek.Character.MonsterAI)pAgent).IsAlive();
+			behaviac.EBTStatus opr = behaviac.EBTStatus.BT_SUCCESS;
+			bool op = opl == opr;
+			return op ? EBTStatus.BT_SUCCESS : EBTStatus.BT_FAILURE;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Parallel_bt_MonsterAI_node2 : behaviac.Parallel
+	{
+		public Parallel_bt_MonsterAI_node2()
+		{
+			m_failPolicy = behaviac.FAILURE_POLICY.FAIL_ON_ONE;
+			m_succeedPolicy = behaviac.SUCCESS_POLICY.SUCCEED_ON_ALL;
+			m_exitPolicy = behaviac.EXIT_POLICY.EXIT_ABORT_RUNNINGSIBLINGS;
+			m_childFinishPolicy = behaviac.CHILDFINISH_POLICY.CHILDFINISH_LOOP;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class DecoratorLoop_bt_MonsterAI_node3 : behaviac.DecoratorLoop
+	{
+		public DecoratorLoop_bt_MonsterAI_node3()
+		{
+			m_bDecorateWhenChildEnds = true;
+			m_bDoneWithinFrame = false;
+		}
+		protected override int GetCount(Agent pAgent)
+		{
+			return -1;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Condition_bt_MonsterAI_node4 : behaviac.Condition
+	{
+		public Condition_bt_MonsterAI_node4()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			behaviac.Agent pAgent_opl = ((GameGeek.Character.Character)pAgent).property;
+			int opl = ((GameGeek.Character.CharacterProperty)pAgent_opl).hp;
+			int opr = 0;
+			bool op = opl > opr;
+			return op ? EBTStatus.BT_SUCCESS : EBTStatus.BT_FAILURE;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class DecoratorLoop_bt_MonsterAI_node5 : behaviac.DecoratorLoop
+	{
+		public DecoratorLoop_bt_MonsterAI_node5()
+		{
+			m_bDecorateWhenChildEnds = true;
+			m_bDoneWithinFrame = false;
+		}
+		protected override int GetCount(Agent pAgent)
+		{
+			return -1;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Condition_bt_MonsterAI_node8 : behaviac.Condition
+	{
+		public Condition_bt_MonsterAI_node8()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			behaviac.Agent pAgent_opl = ((GameGeek.Character.Character)pAgent).property;
+			int opl = ((GameGeek.Character.CharacterProperty)pAgent_opl).hp;
+			int opr = 20;
+			bool op = opl <= opr;
+			return op ? EBTStatus.BT_SUCCESS : EBTStatus.BT_FAILURE;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Action_bt_MonsterAI_node9 : behaviac.Action
+	{
+		public Action_bt_MonsterAI_node9()
+		{
+			this.m_resultOption = EBTStatus.BT_INVALID;
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			behaviac.EBTStatus result = ((GameGeek.Character.MonsterAI)pAgent).ShowAnimation();
+			return result;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Wait_bt_MonsterAI_node10 : behaviac.Wait
+	{
+		public Wait_bt_MonsterAI_node10()
+		{
+		}
+		protected override double GetTime(Agent pAgent)
+		{
+			return 1.5f;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Action_bt_MonsterAI_node11 : behaviac.Action
+	{
+		public Action_bt_MonsterAI_node11()
+		{
+			this.m_resultOption = EBTStatus.BT_INVALID;
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			behaviac.EBTStatus result = ((GameGeek.Character.MonsterAI)pAgent).Seek();
+			return result;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Action_bt_MonsterAI_node13 : behaviac.Action
+	{
+		public Action_bt_MonsterAI_node13()
+		{
+			this.m_resultOption = EBTStatus.BT_INVALID;
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			behaviac.EBTStatus result = ((GameGeek.Character.MonsterAI)pAgent).CanSeeObject();
+			return result;
+		}
+	}
+
+	[behaviac.GeneratedTypeMetaInfo()]
+	class Condition_bt_MonsterAI_node14 : behaviac.Condition
+	{
+		public Condition_bt_MonsterAI_node14()
+		{
+		}
+		protected override EBTStatus update_impl(behaviac.Agent pAgent, behaviac.EBTStatus childStatus)
+		{
+			behaviac.EBTStatus opl = ((GameGeek.Character.MonsterAI)pAgent).IsAlive();
+			behaviac.EBTStatus opr = behaviac.EBTStatus.BT_SUCCESS;
+			bool op = opl == opr;
+			return op ? EBTStatus.BT_SUCCESS : EBTStatus.BT_FAILURE;
+		}
+	}
+
+	public static class bt_MonsterAI
+	{
+		public static bool build_behavior_tree(BehaviorTree bt)
+		{
+			bt.SetClassNameString("BehaviorTree");
+			bt.SetId(-1);
+			bt.SetName("MonsterAI");
+			bt.IsFSM = false;
+#if !BEHAVIAC_RELEASE
+			bt.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+			// children
+			{
+				Sequence node0 = new Sequence();
+				node0.SetClassNameString("Sequence");
+				node0.SetId(0);
+#if !BEHAVIAC_RELEASE
+				node0.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+				bt.AddChild(node0);
+				{
+					Condition_bt_MonsterAI_node1 node1 = new Condition_bt_MonsterAI_node1();
+					node1.SetClassNameString("Condition");
+					node1.SetId(1);
+#if !BEHAVIAC_RELEASE
+					node1.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+					node0.AddChild(node1);
+					node0.SetHasEvents(node0.HasEvents() | node1.HasEvents());
+				}
+				{
+					Parallel_bt_MonsterAI_node2 node2 = new Parallel_bt_MonsterAI_node2();
+					node2.SetClassNameString("Parallel");
+					node2.SetId(2);
+#if !BEHAVIAC_RELEASE
+					node2.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+					node0.AddChild(node2);
+					{
+						DecoratorLoop_bt_MonsterAI_node3 node3 = new DecoratorLoop_bt_MonsterAI_node3();
+						node3.SetClassNameString("DecoratorLoop");
+						node3.SetId(3);
+#if !BEHAVIAC_RELEASE
+						node3.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+						node2.AddChild(node3);
+						{
+							Condition_bt_MonsterAI_node4 node4 = new Condition_bt_MonsterAI_node4();
+							node4.SetClassNameString("Condition");
+							node4.SetId(4);
+#if !BEHAVIAC_RELEASE
+							node4.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+							node3.AddChild(node4);
+							node3.SetHasEvents(node3.HasEvents() | node4.HasEvents());
+						}
+						node2.SetHasEvents(node2.HasEvents() | node3.HasEvents());
+					}
+					{
+						DecoratorLoop_bt_MonsterAI_node5 node5 = new DecoratorLoop_bt_MonsterAI_node5();
+						node5.SetClassNameString("DecoratorLoop");
+						node5.SetId(5);
+#if !BEHAVIAC_RELEASE
+						node5.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+						node2.AddChild(node5);
+						{
+							Selector node6 = new Selector();
+							node6.SetClassNameString("Selector");
+							node6.SetId(6);
+#if !BEHAVIAC_RELEASE
+							node6.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+							node5.AddChild(node6);
+							{
+								Sequence node7 = new Sequence();
+								node7.SetClassNameString("Sequence");
+								node7.SetId(7);
+#if !BEHAVIAC_RELEASE
+								node7.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+								node6.AddChild(node7);
+								{
+									Condition_bt_MonsterAI_node8 node8 = new Condition_bt_MonsterAI_node8();
+									node8.SetClassNameString("Condition");
+									node8.SetId(8);
+#if !BEHAVIAC_RELEASE
+									node8.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+									node7.AddChild(node8);
+									node7.SetHasEvents(node7.HasEvents() | node8.HasEvents());
+								}
+								{
+									Action_bt_MonsterAI_node9 node9 = new Action_bt_MonsterAI_node9();
+									node9.SetClassNameString("Action");
+									node9.SetId(9);
+#if !BEHAVIAC_RELEASE
+									node9.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+									node7.AddChild(node9);
+									node7.SetHasEvents(node7.HasEvents() | node9.HasEvents());
+								}
+								{
+									Wait_bt_MonsterAI_node10 node10 = new Wait_bt_MonsterAI_node10();
+									node10.SetClassNameString("Wait");
+									node10.SetId(10);
+#if !BEHAVIAC_RELEASE
+									node10.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+									node7.AddChild(node10);
+									node7.SetHasEvents(node7.HasEvents() | node10.HasEvents());
+								}
+								{
+									Action_bt_MonsterAI_node11 node11 = new Action_bt_MonsterAI_node11();
+									node11.SetClassNameString("Action");
+									node11.SetId(11);
+#if !BEHAVIAC_RELEASE
+									node11.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+									node7.AddChild(node11);
+									node7.SetHasEvents(node7.HasEvents() | node11.HasEvents());
+								}
+								node6.SetHasEvents(node6.HasEvents() | node7.HasEvents());
+							}
+							{
+								Sequence node12 = new Sequence();
+								node12.SetClassNameString("Sequence");
+								node12.SetId(12);
+#if !BEHAVIAC_RELEASE
+								node12.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+								node6.AddChild(node12);
+								{
+									Action_bt_MonsterAI_node13 node13 = new Action_bt_MonsterAI_node13();
+									node13.SetClassNameString("Action");
+									node13.SetId(13);
+#if !BEHAVIAC_RELEASE
+									node13.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+									node12.AddChild(node13);
+									node12.SetHasEvents(node12.HasEvents() | node13.HasEvents());
+								}
+								{
+									Condition_bt_MonsterAI_node14 node14 = new Condition_bt_MonsterAI_node14();
+									node14.SetClassNameString("Condition");
+									node14.SetId(14);
+#if !BEHAVIAC_RELEASE
+									node14.SetAgentType("GameGeek.Character.MonsterAI");
+#endif
+									node12.AddChild(node14);
+									node12.SetHasEvents(node12.HasEvents() | node14.HasEvents());
+								}
+								node6.SetHasEvents(node6.HasEvents() | node12.HasEvents());
+							}
+							node5.SetHasEvents(node5.HasEvents() | node6.HasEvents());
+						}
+						node2.SetHasEvents(node2.HasEvents() | node5.HasEvents());
+					}
+					node0.SetHasEvents(node0.HasEvents() | node2.HasEvents());
+				}
+				bt.SetHasEvents(bt.HasEvents() | node0.HasEvents());
+			}
+			return true;
+		}
+	}
+
 }

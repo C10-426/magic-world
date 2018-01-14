@@ -24,7 +24,7 @@ namespace GameGeek.Character
 	{
 		public GameGeek.Character.CharacterType characterType = GameGeek.Character.CharacterType.CT_NULL;
 
-		public GameGeek.Character.CharacterProperty property = new GameGeek.Character.CharacterProperty();
+		public GameGeek.Character.CharacterProperty property = null;
 
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
 

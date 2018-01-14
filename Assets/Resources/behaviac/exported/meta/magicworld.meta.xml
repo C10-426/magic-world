@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<agents version="1" signature="2114511362">
+  <agent type="GameGeek::Character::Character" base="behaviac::Agent" signature="277886623">
+    <properties>
+      <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
+      <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
+    </properties>
+  </agent>
+  <agent type="GameGeek::Character::PatrolAgent" base="GameGeek::Character::Character" signature="1347991743">
+    <properties>
+      <property name="alertRadius" type="float" member="false" static="false" defaultvalue="0" />
+      <property name="attackRange" type="float" member="false" static="false" defaultvalue="0" />
+      <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
+      <property name="chaseRadius" type="float" member="false" static="false" defaultvalue="0" />
+      <property name="currentStatus" type="GameGeek::Character::PatrolStatus" member="false" static="false" defaultvalue="IDLE" />
+      <property name="defendRadius" type="float" member="false" static="false" defaultvalue="0" />
+      <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
+      <property name="runSpeed" type="float" member="false" static="false" defaultvalue="3" />
+      <property name="turnSpeed" type="float" member="false" static="false" defaultvalue="0.1" />
+      <property name="walkSpeed" type="float" member="false" static="false" defaultvalue="1" />
+      <property name="wanderRadius" type="float" member="false" static="false" defaultvalue="0" />
+    </properties>
+  </agent>
+  <agent type="GameGeek::Character::CharacterPlayer" base="GameGeek::Character::Character" signature="3493719388">
+    <properties>
+      <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
+      <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
+    </properties>
+  </agent>
+  <agent type="GameGeek::Character::CharacterMonster" base="GameGeek::Character::Character" signature="750622309">
+    <properties>
+      <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
+      <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
+    </properties>
+  </agent>
+  <agent type="GameGeek::Character::CharacterProperty" base="behaviac::Agent" signature="3787893997">
+    <properties>
+      <property name="damage" type="float" member="false" static="false" defaultvalue="20" />
+      <property name="defanse" type="int" member="false" static="false" defaultvalue="12" />
+      <property name="hp" type="int" member="false" static="false" defaultvalue="100" />
+      <property name="level" type="int" member="false" static="false" defaultvalue="0" />
+      <property name="mp" type="int" member="false" static="false" defaultvalue="80" />
+    </properties>
+  </agent>
+  <agent type="GameGeek::Character::PlayerCharacterProperty" base="GameGeek::Character::CharacterProperty" signature="3704673207">
+    <properties>
+      <property name="damage" type="float" member="false" static="false" defaultvalue="20" />
+      <property name="defanse" type="int" member="false" static="false" defaultvalue="12" />
+      <property name="experience" type="int" member="false" static="false" defaultvalue="0" />
+      <property name="gender" type="GameGeek::Character::GenderType" member="false" static="false" defaultvalue="UNKNOW" />
+      <property name="hp" type="int" member="false" static="false" defaultvalue="100" />
+      <property name="level" type="int" member="false" static="false" defaultvalue="0" />
+      <property name="mp" type="int" member="false" static="false" defaultvalue="80" />
+    </properties>
+  </agent>
+  <agent type="GameGeek::Character::MonsterAI" base="GameGeek::Character::CharacterMonster" signature="1136571889">
+    <properties>
+      <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
+      <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
+    </properties>
+  </agent>
+</agents>

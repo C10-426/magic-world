@@ -31,22 +31,6 @@
       <enum NativeValue="GameGeek::Character::BATTLE" Value="BATTLE" DisplayName="BATTLE" Desc="" MemberValue="3" />
       <enum NativeValue="GameGeek::Character::RETURN" Value="RETURN" DisplayName="RETURN" Desc="" MemberValue="4" />
     </enumtype>
-    <struct Type="GameGeek::Character::CharacterProperty" Namespace="GameGeek::Character" Base="" IsCustomized="true" ExportLocation="../Assets/Scripts/Character" DisplayName="CharacterProperty" Desc="CharacterProperty">
-      <Member Name="hp" DisplayName="hp" Desc="hp" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
-      <Member Name="mp" DisplayName="mp" Desc="mp" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
-      <Member Name="defanse" DisplayName="defanse" Desc="defanse" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
-      <Member Name="atk" DisplayName="atk" Desc="atk" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
-      <Member Name="level" DisplayName="level" Desc="level" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::CharacterProperty" Public="true" />
-    </struct>
-    <struct Type="GameGeek::Character::PlayerCharacterProperty" Namespace="GameGeek::Character" Base="GameGeek::Character::CharacterProperty" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Player" DisplayName="PlayerCharacterProperty" Desc="PlayerCharacterProperty">
-      <Member Name="experience" DisplayName="experience" Desc="experience" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
-      <Member Name="gender" DisplayName="gender" Desc="gender" Type="GameGeek::Character::GenderType" TypeFullName="XMLPluginBehaviac.GameGeek_Character_GenderType" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
-      <Member Name="hp" DisplayName="hp" Desc="hp" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
-      <Member Name="mp" DisplayName="mp" Desc="mp" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
-      <Member Name="defanse" DisplayName="defanse" Desc="defanse" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
-      <Member Name="atk" DisplayName="atk" Desc="atk" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
-      <Member Name="level" DisplayName="level" Desc="level" Type="int" TypeFullName="System.Int32" Class="GameGeek::Character::PlayerCharacterProperty" Public="true" />
-    </struct>
   </types>
   <agents>
     <agent classfullname="behaviac::Agent" DisplayName="behaviac::Agent" Desc="behaviac::Agent" IsRefType="true" IsImplemented="true">
@@ -74,7 +58,7 @@
     </agent>
     <agent classfullname="GameGeek::Character::Character" base="behaviac::Agent" DisplayName="Character" Desc="Character" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character">
       <Member Name="characterType" DisplayName="characterType" Desc="characterType" Class="GameGeek::Character::Character" Type="GameGeek::Character::CharacterType" TypeFullName="XMLPluginBehaviac.GameGeek_Character_CharacterType" defaultvalue="CT_NULL" Static="false" Public="true" Readonly="false" />
-      <Member Name="property" DisplayName="property" Desc="property" Class="GameGeek::Character::Character" Type="GameGeek::Character::CharacterProperty*" TypeFullName="XMLPluginBehaviac.GameGeek_Character_CharacterProperty" defaultvalue="{hp=0;mp=0;defanse=0;atk=0;level=0;}" Static="false" Public="true" Readonly="false" />
+      <Member Name="property" DisplayName="property" Desc="property" Class="GameGeek::Character::Character" Type="GameGeek::Character::CharacterProperty*" TypeFullName="XMLPluginBehaviac.GameGeek_Character_CharacterProperty" defaultvalue="null" Static="false" Public="true" Readonly="false" />
     </agent>
     <agent classfullname="GameGeek::Character::PatrolAgent" base="GameGeek::Character::Character" DisplayName="PatrolAgent" Desc="PatrolAgent" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/AI">
       <Member Name="walkSpeed" DisplayName="walkSpeed" Desc="walkSpeed" Class="GameGeek::Character::PatrolAgent" Type="float" TypeFullName="System.Single" defaultvalue="1" Static="false" Public="true" Readonly="false" />
@@ -93,6 +77,30 @@
     </agent>
     <agent classfullname="GameGeek::Character::CharacterPlayer" base="GameGeek::Character::Character" DisplayName="CharacterPlayer" Desc="CharacterPlayer" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Player" />
     <agent classfullname="GameGeek::Character::CharacterMonster" base="GameGeek::Character::Character" DisplayName="CharacterMonster" Desc="CharacterMonster" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Monster" />
+    <agent classfullname="GameGeek::Character::CharacterProperty" base="behaviac::Agent" DisplayName="CharacterProperty" Desc="CharacterProperty" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character">
+      <Member Name="hp" DisplayName="hp" Desc="hp" Class="GameGeek::Character::CharacterProperty" Type="int" TypeFullName="System.Int32" defaultvalue="100" Static="false" Public="true" Readonly="false" />
+      <Member Name="mp" DisplayName="mp" Desc="mp" Class="GameGeek::Character::CharacterProperty" Type="int" TypeFullName="System.Int32" defaultvalue="80" Static="false" Public="true" Readonly="false" />
+      <Member Name="defanse" DisplayName="defanse" Desc="defanse" Class="GameGeek::Character::CharacterProperty" Type="int" TypeFullName="System.Int32" defaultvalue="12" Static="false" Public="true" Readonly="false" />
+      <Member Name="damage" DisplayName="damage" Desc="damage" Class="GameGeek::Character::CharacterProperty" Type="float" TypeFullName="System.Single" defaultvalue="20" Static="false" Public="true" Readonly="false" />
+      <Member Name="level" DisplayName="level" Desc="level" Class="GameGeek::Character::CharacterProperty" Type="int" TypeFullName="System.Int32" defaultvalue="0" Static="false" Public="true" Readonly="false" />
+    </agent>
+    <agent classfullname="GameGeek::Character::PlayerCharacterProperty" base="GameGeek::Character::CharacterProperty" DisplayName="PlayerCharacterProperty" Desc="PlayerCharacterProperty" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Player">
+      <Member Name="experience" DisplayName="experience" Desc="experience" Class="GameGeek::Character::PlayerCharacterProperty" Type="int" TypeFullName="System.Int32" defaultvalue="0" Static="false" Public="true" Readonly="false" />
+      <Member Name="gender" DisplayName="gender" Desc="gender" Class="GameGeek::Character::PlayerCharacterProperty" Type="GameGeek::Character::GenderType" TypeFullName="XMLPluginBehaviac.GameGeek_Character_GenderType" defaultvalue="UNKNOW" Static="false" Public="true" Readonly="false" />
+    </agent>
+    <agent classfullname="GameGeek::Character::MonsterAI" base="GameGeek::Character::CharacterMonster" DisplayName="MonsterAI" Desc="MonsterAI" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/AI">
+      <Method Name="Seek" DisplayName="Seek" Desc="Seek" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="CanSeeObject" DisplayName="CanSeeObject" Desc="CanSeeObject" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="Attack" DisplayName="Attack" Desc="Attack" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="WithinDistance" DisplayName="WithinDistance" Desc="WithinDistance" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="RotateTowards" DisplayName="RotateTowards" Desc="RotateTowards" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="IsDamaged" DisplayName="IsDamaged" Desc="IsDamaged" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="IsAlive" DisplayName="IsAlive" Desc="IsAlive" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="Wander" DisplayName="Wander" Desc="Wander" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="Patrol" DisplayName="Patrol" Desc="Patrol" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="ShowAnimation" DisplayName="ShowAnimation" Desc="ShowAnimation" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="GetCurrentHealth" DisplayName="GetCurrentHealth" Desc="GetCurrentHealth" Class="GameGeek::Character::MonsterAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+    </agent>
   </agents>
   <instances />
 </meta>

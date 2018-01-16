@@ -22,6 +22,8 @@ namespace GameGeek.Character
 ///<<< BEGIN WRITING YOUR CODE CharacterPlayer
     ///<<< END WRITING YOUR CODE
 	{
+		public GameGeek.Character.PlayerStatus currentStatus = GameGeek.Character.PlayerStatus.IDLE;
+
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
         public CharacterPlayer()
     : base()

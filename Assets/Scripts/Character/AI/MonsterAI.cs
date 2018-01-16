@@ -27,7 +27,8 @@ namespace GameGeek.Character
         public behaviac.EBTStatus Attack()
         {
             ///<<< BEGIN WRITING YOUR CODE Attack
-            behaviac.Debug.LogWarning("Attack");
+            if (isDebug)
+                behaviac.Debug.LogWarning("Attack");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
@@ -35,7 +36,8 @@ namespace GameGeek.Character
         public behaviac.EBTStatus CanSeeObject()
         {
             ///<<< BEGIN WRITING YOUR CODE CanSeeObject
-            behaviac.Debug.LogWarning("CanSeeObject");
+            if (isDebug)
+                behaviac.Debug.LogWarning("CanSeeObject");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
@@ -43,7 +45,8 @@ namespace GameGeek.Character
         public behaviac.EBTStatus GetCurrentHealth()
         {
             ///<<< BEGIN WRITING YOUR CODE GetCurrentHealth
-            behaviac.Debug.LogWarning("GetCurrentHealth");
+            if (isDebug)
+                behaviac.Debug.LogWarning("GetCurrentHealth");
             if (property.hp > 0)
             {
                 return behaviac.EBTStatus.BT_SUCCESS;
@@ -55,8 +58,9 @@ namespace GameGeek.Character
         public behaviac.EBTStatus IsAlive()
         {
             ///<<< BEGIN WRITING YOUR CODE IsAlive
-            behaviac.Debug.LogWarning("IsAlive");
-			if (property.hp > 0)
+            if (isDebug)
+                behaviac.Debug.LogWarning("IsAlive");
+            if (property.hp > 0)
             {
                 return behaviac.EBTStatus.BT_SUCCESS;
             }
@@ -67,7 +71,8 @@ namespace GameGeek.Character
         public behaviac.EBTStatus IsDamaged()
         {
             ///<<< BEGIN WRITING YOUR CODE IsDamaged
-            behaviac.Debug.LogWarning("IsDamaged");
+            if (isDebug)
+                behaviac.Debug.LogWarning("IsDamaged");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
@@ -75,7 +80,8 @@ namespace GameGeek.Character
         public behaviac.EBTStatus Patrol()
         {
             ///<<< BEGIN WRITING YOUR CODE Patrol
-            behaviac.Debug.LogWarning("Patrol");
+            if (isDebug)
+                behaviac.Debug.LogWarning("Patrol");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
@@ -83,7 +89,8 @@ namespace GameGeek.Character
         public behaviac.EBTStatus RotateTowards()
         {
             ///<<< BEGIN WRITING YOUR CODE RotateTowards
-            behaviac.Debug.LogWarning("RotateTowards");
+            if (isDebug)
+                behaviac.Debug.LogWarning("RotateTowards");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
@@ -91,7 +98,8 @@ namespace GameGeek.Character
         public behaviac.EBTStatus Seek()
         {
             ///<<< BEGIN WRITING YOUR CODE Seek
-            behaviac.Debug.LogWarning("Seek");
+            if (isDebug)
+                behaviac.Debug.LogWarning("Seek");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
@@ -99,7 +107,8 @@ namespace GameGeek.Character
         public behaviac.EBTStatus ShowAnimation()
         {
             ///<<< BEGIN WRITING YOUR CODE ShowAnimation
-            behaviac.Debug.LogWarning("ShowAnimation");
+            if (isDebug)
+                behaviac.Debug.LogWarning("ShowAnimation");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
@@ -107,7 +116,8 @@ namespace GameGeek.Character
         public behaviac.EBTStatus Wander()
         {
             ///<<< BEGIN WRITING YOUR CODE Wander
-            behaviac.Debug.LogWarning("Wander");
+            if (isDebug)
+                behaviac.Debug.LogWarning("Wander");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
@@ -115,43 +125,15 @@ namespace GameGeek.Character
         public behaviac.EBTStatus WithinDistance()
         {
             ///<<< BEGIN WRITING YOUR CODE WithinDistance
-            behaviac.Debug.LogWarning("WithinDistance");
+            if (isDebug)
+                behaviac.Debug.LogWarning("WithinDistance");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
         ///<<< BEGIN WRITING YOUR CODE CLASS_PART
 
-        private static string ExportedFilePath
-        {
-            get
-            {
-                string relativePath = "/Resources/behaviac/exported";
-
-                if (Application.platform == RuntimePlatform.WindowsEditor)
-                {
-                    return Application.dataPath + relativePath;
-                }
-                else if (Application.platform == RuntimePlatform.WindowsPlayer)
-                {
-                    return Application.dataPath + relativePath;
-                }
-                else
-                {
-                    return "Assets" + relativePath;
-                }
-            }
-        }
-
-        private bool InitBehavic()
-        {
-            behaviac.Debug.LogWarning("InitBehavic");
-
-            behaviac.Workspace.Instance.FilePath = ExportedFilePath;
-            behaviac.Workspace.Instance.FileFormat = behaviac.Workspace.EFileFormat.EFF_xml;
-
-            return true;
-        }
+        private bool isDebug = false;
 
         private bool InitMonsterAI()
         {
@@ -161,6 +143,7 @@ namespace GameGeek.Character
             if (bRet)
             {
                 this.btsetcurrent("MonsterAI");
+                _status = behaviac.EBTStatus.BT_RUNNING;
             }
 
             return bRet;
@@ -168,8 +151,6 @@ namespace GameGeek.Character
 
         void Awake()
         {
-            InitBehavic();
-
             InitMonsterAI();
         }
         void Start()
@@ -177,20 +158,11 @@ namespace GameGeek.Character
             // property = CharacterConfig.GetDefaultCharacterProperty();
         }
 
-        behaviac.EBTStatus _status = behaviac.EBTStatus.BT_RUNNING;
 
-        void Update()
-        {
-            if (_status == behaviac.EBTStatus.BT_RUNNING)
-            {
-                _status = this.btexec();
-            }
-        }
 
         ///<<< END WRITING YOUR CODE
 
     }
-
 
     ///<<< BEGIN WRITING YOUR CODE NAMESPACE_UNINIT
 

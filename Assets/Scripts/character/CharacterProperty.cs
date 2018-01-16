@@ -32,6 +32,8 @@ namespace GameGeek.Character
 
 		public int mp = 80;
 
+		public float walkSpeed = 5f;
+
 ///<<< BEGIN WRITING YOUR CODE CLASS_PART
 
 ///<<< END WRITING YOUR CODE

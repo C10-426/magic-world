@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: PlayerAI.xml-->
+<behavior name="PlayerAI" agenttype="GameGeek::Character::PlayerAI" version="5">
+  <node class="DecoratorLoop" id="4">
+    <property Count="const int -1" />
+    <property DecorateWhenChildEnds="true" />
+    <property DoneWithinFrame="false" />
+    <node class="Action" id="0">
+      <property Method="Self.GameGeek::Character::PlayerAI::Move()" />
+      <property ResultOption="BT_INVALID" />
+    </node>
+  </node>
+</behavior>

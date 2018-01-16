@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<agents version="1" signature="2114511362">
+<agents version="1" signature="1526623296">
   <agent type="GameGeek::Character::Character" base="behaviac::Agent" signature="277886623">
     <properties>
       <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
@@ -22,9 +22,10 @@
       <property name="wanderRadius" type="float" member="false" static="false" defaultvalue="0" />
     </properties>
   </agent>
-  <agent type="GameGeek::Character::CharacterPlayer" base="GameGeek::Character::Character" signature="3493719388">
+  <agent type="GameGeek::Character::CharacterPlayer" base="GameGeek::Character::Character" signature="978754908">
     <properties>
       <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
+      <property name="currentStatus" type="GameGeek::Character::PlayerStatus" member="false" static="false" defaultvalue="IDLE" />
       <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
     </properties>
   </agent>
@@ -34,16 +35,17 @@
       <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
     </properties>
   </agent>
-  <agent type="GameGeek::Character::CharacterProperty" base="behaviac::Agent" signature="3787893997">
+  <agent type="GameGeek::Character::CharacterProperty" base="behaviac::Agent" signature="4099493770">
     <properties>
       <property name="damage" type="float" member="false" static="false" defaultvalue="20" />
       <property name="defanse" type="int" member="false" static="false" defaultvalue="12" />
       <property name="hp" type="int" member="false" static="false" defaultvalue="100" />
       <property name="level" type="int" member="false" static="false" defaultvalue="0" />
       <property name="mp" type="int" member="false" static="false" defaultvalue="80" />
+      <property name="walkSpeed" type="float" member="false" static="false" defaultvalue="5" />
     </properties>
   </agent>
-  <agent type="GameGeek::Character::PlayerCharacterProperty" base="GameGeek::Character::CharacterProperty" signature="3704673207">
+  <agent type="GameGeek::Character::PlayerCharacterProperty" base="GameGeek::Character::CharacterProperty" signature="217385119">
     <properties>
       <property name="damage" type="float" member="false" static="false" defaultvalue="20" />
       <property name="defanse" type="int" member="false" static="false" defaultvalue="12" />
@@ -52,11 +54,19 @@
       <property name="hp" type="int" member="false" static="false" defaultvalue="100" />
       <property name="level" type="int" member="false" static="false" defaultvalue="0" />
       <property name="mp" type="int" member="false" static="false" defaultvalue="80" />
+      <property name="walkSpeed" type="float" member="false" static="false" defaultvalue="5" />
     </properties>
   </agent>
   <agent type="GameGeek::Character::MonsterAI" base="GameGeek::Character::CharacterMonster" signature="1136571889">
     <properties>
       <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
+      <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
+    </properties>
+  </agent>
+  <agent type="GameGeek::Character::PlayerAI" base="GameGeek::Character::CharacterPlayer" signature="906776347">
+    <properties>
+      <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
+      <property name="currentStatus" type="GameGeek::Character::PlayerStatus" member="false" static="false" defaultvalue="IDLE" />
       <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
     </properties>
   </agent>

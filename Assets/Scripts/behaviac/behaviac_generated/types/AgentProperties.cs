@@ -148,6 +148,34 @@ namespace behaviac
 		}
 	}
 
+	public class CompareValue_GameGeek_Character_PlayerStatus : ICompareValue<GameGeek.Character.PlayerStatus>
+	{
+		public override bool Equal(GameGeek.Character.PlayerStatus lhs, GameGeek.Character.PlayerStatus rhs)
+		{
+			return lhs == rhs;
+		}
+		public override bool NotEqual(GameGeek.Character.PlayerStatus lhs, GameGeek.Character.PlayerStatus rhs)
+		{
+			return lhs != rhs;
+		}
+		public override bool Greater(GameGeek.Character.PlayerStatus lhs, GameGeek.Character.PlayerStatus rhs)
+		{
+			return lhs > rhs;
+		}
+		public override bool GreaterEqual(GameGeek.Character.PlayerStatus lhs, GameGeek.Character.PlayerStatus rhs)
+		{
+			return lhs >= rhs;
+		}
+		public override bool Less(GameGeek.Character.PlayerStatus lhs, GameGeek.Character.PlayerStatus rhs)
+		{
+			return lhs < rhs;
+		}
+		public override bool LessEqual(GameGeek.Character.PlayerStatus lhs, GameGeek.Character.PlayerStatus rhs)
+		{
+			return lhs <= rhs;
+		}
+	}
+
 
 	public class BehaviorLoaderImplement : BehaviorLoader
 	{
@@ -328,7 +356,7 @@ namespace behaviac
 
 		public override bool Load()
 		{
-			AgentMeta.TotalSignature = 2114511362;
+			AgentMeta.TotalSignature = 1526623296;
 
 			AgentMeta meta;
 
@@ -380,9 +408,10 @@ namespace behaviac
 			meta.RegisterMethod(1870214581, new CAgentMethodVoid(delegate(Agent self) { ((GameGeek.Character.PatrolAgent)self).Wander(); }));
 
 			// GameGeek.Character.CharacterPlayer
-			meta = new AgentMeta(3493719388);
+			meta = new AgentMeta(978754908);
 			AgentMeta._AgentMetas_[3282746670] = meta;
 			meta.RegisterMemberProperty(2590663027, new CMemberProperty<GameGeek.Character.CharacterType>("characterType", delegate(Agent self, GameGeek.Character.CharacterType value) { ((GameGeek.Character.CharacterPlayer)self).characterType = value; }, delegate(Agent self) { return ((GameGeek.Character.CharacterPlayer)self).characterType; }));
+			meta.RegisterMemberProperty(1987130516, new CMemberProperty<GameGeek.Character.PlayerStatus>("currentStatus", delegate(Agent self, GameGeek.Character.PlayerStatus value) { ((GameGeek.Character.CharacterPlayer)self).currentStatus = value; }, delegate(Agent self) { return ((GameGeek.Character.CharacterPlayer)self).currentStatus; }));
 			meta.RegisterMemberProperty(1120310671, new CMemberProperty<GameGeek.Character.CharacterProperty>("property", delegate(Agent self, GameGeek.Character.CharacterProperty value) { ((GameGeek.Character.CharacterPlayer)self).property = value; }, delegate(Agent self) { return ((GameGeek.Character.CharacterPlayer)self).property; }));
 			meta.RegisterMethod(1045109914, new CAgentStaticMethodVoid<string>(delegate(string param0) { GameGeek.Character.CharacterPlayer.LogMessage(param0); }));
 			meta.RegisterMethod(2521019022, new CMethod_behaviac_Agent_VectorAdd());
@@ -404,13 +433,14 @@ namespace behaviac
 			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
 
 			// GameGeek.Character.CharacterProperty
-			meta = new AgentMeta(3787893997);
+			meta = new AgentMeta(4099493770);
 			AgentMeta._AgentMetas_[169441367] = meta;
 			meta.RegisterMemberProperty(2156613728, new CMemberProperty<float>("damage", delegate(Agent self, float value) { ((GameGeek.Character.CharacterProperty)self).damage = value; }, delegate(Agent self) { return ((GameGeek.Character.CharacterProperty)self).damage; }));
 			meta.RegisterMemberProperty(1722614615, new CMemberProperty<int>("defanse", delegate(Agent self, int value) { ((GameGeek.Character.CharacterProperty)self).defanse = value; }, delegate(Agent self) { return ((GameGeek.Character.CharacterProperty)self).defanse; }));
 			meta.RegisterMemberProperty(2269881519, new CMemberProperty<int>("hp", delegate(Agent self, int value) { ((GameGeek.Character.CharacterProperty)self).hp = value; }, delegate(Agent self) { return ((GameGeek.Character.CharacterProperty)self).hp; }));
 			meta.RegisterMemberProperty(3652407279, new CMemberProperty<int>("level", delegate(Agent self, int value) { ((GameGeek.Character.CharacterProperty)self).level = value; }, delegate(Agent self) { return ((GameGeek.Character.CharacterProperty)self).level; }));
 			meta.RegisterMemberProperty(2172675652, new CMemberProperty<int>("mp", delegate(Agent self, int value) { ((GameGeek.Character.CharacterProperty)self).mp = value; }, delegate(Agent self) { return ((GameGeek.Character.CharacterProperty)self).mp; }));
+			meta.RegisterMemberProperty(74232591, new CMemberProperty<float>("walkSpeed", delegate(Agent self, float value) { ((GameGeek.Character.CharacterProperty)self).walkSpeed = value; }, delegate(Agent self) { return ((GameGeek.Character.CharacterProperty)self).walkSpeed; }));
 			meta.RegisterMethod(1045109914, new CAgentStaticMethodVoid<string>(delegate(string param0) { GameGeek.Character.CharacterProperty.LogMessage(param0); }));
 			meta.RegisterMethod(2521019022, new CMethod_behaviac_Agent_VectorAdd());
 			meta.RegisterMethod(2306090221, new CMethod_behaviac_Agent_VectorClear());
@@ -419,7 +449,7 @@ namespace behaviac
 			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
 
 			// GameGeek.Character.PlayerCharacterProperty
-			meta = new AgentMeta(3704673207);
+			meta = new AgentMeta(217385119);
 			AgentMeta._AgentMetas_[3465726432] = meta;
 			meta.RegisterMemberProperty(2156613728, new CMemberProperty<float>("damage", delegate(Agent self, float value) { ((GameGeek.Character.PlayerCharacterProperty)self).damage = value; }, delegate(Agent self) { return ((GameGeek.Character.PlayerCharacterProperty)self).damage; }));
 			meta.RegisterMemberProperty(1722614615, new CMemberProperty<int>("defanse", delegate(Agent self, int value) { ((GameGeek.Character.PlayerCharacterProperty)self).defanse = value; }, delegate(Agent self) { return ((GameGeek.Character.PlayerCharacterProperty)self).defanse; }));
@@ -428,6 +458,7 @@ namespace behaviac
 			meta.RegisterMemberProperty(2269881519, new CMemberProperty<int>("hp", delegate(Agent self, int value) { ((GameGeek.Character.PlayerCharacterProperty)self).hp = value; }, delegate(Agent self) { return ((GameGeek.Character.PlayerCharacterProperty)self).hp; }));
 			meta.RegisterMemberProperty(3652407279, new CMemberProperty<int>("level", delegate(Agent self, int value) { ((GameGeek.Character.PlayerCharacterProperty)self).level = value; }, delegate(Agent self) { return ((GameGeek.Character.PlayerCharacterProperty)self).level; }));
 			meta.RegisterMemberProperty(2172675652, new CMemberProperty<int>("mp", delegate(Agent self, int value) { ((GameGeek.Character.PlayerCharacterProperty)self).mp = value; }, delegate(Agent self) { return ((GameGeek.Character.PlayerCharacterProperty)self).mp; }));
+			meta.RegisterMemberProperty(74232591, new CMemberProperty<float>("walkSpeed", delegate(Agent self, float value) { ((GameGeek.Character.PlayerCharacterProperty)self).walkSpeed = value; }, delegate(Agent self) { return ((GameGeek.Character.PlayerCharacterProperty)self).walkSpeed; }));
 			meta.RegisterMethod(1045109914, new CAgentStaticMethodVoid<string>(delegate(string param0) { GameGeek.Character.PlayerCharacterProperty.LogMessage(param0); }));
 			meta.RegisterMethod(2521019022, new CMethod_behaviac_Agent_VectorAdd());
 			meta.RegisterMethod(2306090221, new CMethod_behaviac_Agent_VectorClear());
@@ -458,6 +489,22 @@ namespace behaviac
 			meta.RegisterMethod(1870214581, new CAgentMethod<behaviac.EBTStatus>(delegate(Agent self) { return ((GameGeek.Character.MonsterAI)self).Wander(); }));
 			meta.RegisterMethod(1685750376, new CAgentMethod<behaviac.EBTStatus>(delegate(Agent self) { return ((GameGeek.Character.MonsterAI)self).WithinDistance(); }));
 
+			// GameGeek.Character.PlayerAI
+			meta = new AgentMeta(906776347);
+			AgentMeta._AgentMetas_[1715368090] = meta;
+			meta.RegisterMemberProperty(2590663027, new CMemberProperty<GameGeek.Character.CharacterType>("characterType", delegate(Agent self, GameGeek.Character.CharacterType value) { ((GameGeek.Character.PlayerAI)self).characterType = value; }, delegate(Agent self) { return ((GameGeek.Character.PlayerAI)self).characterType; }));
+			meta.RegisterMemberProperty(1987130516, new CMemberProperty<GameGeek.Character.PlayerStatus>("currentStatus", delegate(Agent self, GameGeek.Character.PlayerStatus value) { ((GameGeek.Character.PlayerAI)self).currentStatus = value; }, delegate(Agent self) { return ((GameGeek.Character.PlayerAI)self).currentStatus; }));
+			meta.RegisterMemberProperty(1120310671, new CMemberProperty<GameGeek.Character.CharacterProperty>("property", delegate(Agent self, GameGeek.Character.CharacterProperty value) { ((GameGeek.Character.PlayerAI)self).property = value; }, delegate(Agent self) { return ((GameGeek.Character.PlayerAI)self).property; }));
+			meta.RegisterMethod(2253404977, new CAgentMethod<behaviac.EBTStatus>(delegate(Agent self) { return ((GameGeek.Character.PlayerAI)self).Idle(); }));
+			meta.RegisterMethod(3794954857, new CAgentMethod<bool>(delegate(Agent self) { return ((GameGeek.Character.PlayerAI)self).IsUserControlMovement(); }));
+			meta.RegisterMethod(1045109914, new CAgentStaticMethodVoid<string>(delegate(string param0) { GameGeek.Character.PlayerAI.LogMessage(param0); }));
+			meta.RegisterMethod(3042982998, new CAgentMethod<behaviac.EBTStatus>(delegate(Agent self) { return ((GameGeek.Character.PlayerAI)self).Move(); }));
+			meta.RegisterMethod(2521019022, new CMethod_behaviac_Agent_VectorAdd());
+			meta.RegisterMethod(2306090221, new CMethod_behaviac_Agent_VectorClear());
+			meta.RegisterMethod(3483755530, new CMethod_behaviac_Agent_VectorContains());
+			meta.RegisterMethod(505785840, new CMethod_behaviac_Agent_VectorLength());
+			meta.RegisterMethod(502968959, new CMethod_behaviac_Agent_VectorRemove());
+
 			AgentMeta.Register<behaviac.Agent>("behaviac.Agent");
 			AgentMeta.Register<GameGeek.Character.Character>("GameGeek.Character.Character");
 			AgentMeta.Register<GameGeek.Character.PatrolAgent>("GameGeek.Character.PatrolAgent");
@@ -466,6 +513,7 @@ namespace behaviac
 			AgentMeta.Register<GameGeek.Character.CharacterProperty>("GameGeek.Character.CharacterProperty");
 			AgentMeta.Register<GameGeek.Character.PlayerCharacterProperty>("GameGeek.Character.PlayerCharacterProperty");
 			AgentMeta.Register<GameGeek.Character.MonsterAI>("GameGeek.Character.MonsterAI");
+			AgentMeta.Register<GameGeek.Character.PlayerAI>("GameGeek.Character.PlayerAI");
 			AgentMeta.Register<GameGeek.Character.CharacterType>("GameGeek.Character.CharacterType");
 			ComparerRegister.RegisterType<GameGeek.Character.CharacterType, CompareValue_GameGeek_Character_CharacterType>();
 			AgentMeta.Register<GameGeek.Character.GenderType>("GameGeek.Character.GenderType");
@@ -476,6 +524,8 @@ namespace behaviac
 			ComparerRegister.RegisterType<GameGeek.Character.SkillType, CompareValue_GameGeek_Character_SkillType>();
 			AgentMeta.Register<GameGeek.Character.PatrolStatus>("GameGeek.Character.PatrolStatus");
 			ComparerRegister.RegisterType<GameGeek.Character.PatrolStatus, CompareValue_GameGeek_Character_PatrolStatus>();
+			AgentMeta.Register<GameGeek.Character.PlayerStatus>("GameGeek.Character.PlayerStatus");
+			ComparerRegister.RegisterType<GameGeek.Character.PlayerStatus, CompareValue_GameGeek_Character_PlayerStatus>();
 			return true;
 		}
 
@@ -489,11 +539,13 @@ namespace behaviac
 			AgentMeta.UnRegister<GameGeek.Character.CharacterProperty>("GameGeek.Character.CharacterProperty");
 			AgentMeta.UnRegister<GameGeek.Character.PlayerCharacterProperty>("GameGeek.Character.PlayerCharacterProperty");
 			AgentMeta.UnRegister<GameGeek.Character.MonsterAI>("GameGeek.Character.MonsterAI");
+			AgentMeta.UnRegister<GameGeek.Character.PlayerAI>("GameGeek.Character.PlayerAI");
 			AgentMeta.UnRegister<GameGeek.Character.CharacterType>("GameGeek.Character.CharacterType");
 			AgentMeta.UnRegister<GameGeek.Character.GenderType>("GameGeek.Character.GenderType");
 			AgentMeta.UnRegister<GameGeek.Character.SkillStatus>("GameGeek.Character.SkillStatus");
 			AgentMeta.UnRegister<GameGeek.Character.SkillType>("GameGeek.Character.SkillType");
 			AgentMeta.UnRegister<GameGeek.Character.PatrolStatus>("GameGeek.Character.PatrolStatus");
+			AgentMeta.UnRegister<GameGeek.Character.PlayerStatus>("GameGeek.Character.PlayerStatus");
 			return true;
 		}
 	}

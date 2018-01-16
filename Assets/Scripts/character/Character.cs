@@ -14,27 +14,41 @@ using System.Collections.Generic;
 
 namespace GameGeek.Character
 {
-///<<< BEGIN WRITING YOUR CODE NAMESPACE_INIT
+    ///<<< BEGIN WRITING YOUR CODE NAMESPACE_INIT
+    [UnityEngine.RequireComponent(typeof(CharacterProperty))]
+    ///<<< END WRITING YOUR CODE
 
-///<<< END WRITING YOUR CODE
+    public class Character : behaviac.Agent
+    ///<<< BEGIN WRITING YOUR CODE Character
+    ///<<< END WRITING YOUR CODE
+    {
+        public GameGeek.Character.CharacterType characterType = GameGeek.Character.CharacterType.CT_NULL;
 
-	public class Character : behaviac.Agent
-///<<< BEGIN WRITING YOUR CODE Character
-///<<< END WRITING YOUR CODE
-	{
-		public GameGeek.Character.CharacterType characterType = GameGeek.Character.CharacterType.CT_NULL;
+        public GameGeek.Character.CharacterProperty property = null;
 
-		public GameGeek.Character.CharacterProperty property = null;
+        ///<<< BEGIN WRITING YOUR CODE CLASS_PART
 
-///<<< BEGIN WRITING YOUR CODE CLASS_PART
+        void Awake()
+        {
+            BehaviacInitializer.InitBehavic();
+        }
+		
+		public behaviac.EBTStatus _status = behaviac.EBTStatus.BT_INVALID;
 
-///<<< END WRITING YOUR CODE
+        void FixedUpdate()
+        {
+            if (_status == behaviac.EBTStatus.BT_RUNNING)
+            {
+                _status = this.btexec();
+            }
+        }
+        ///<<< END WRITING YOUR CODE
 
-	}
+    }
 
-///<<< BEGIN WRITING YOUR CODE NAMESPACE_UNINIT
+    ///<<< BEGIN WRITING YOUR CODE NAMESPACE_UNINIT
 
-///<<< END WRITING YOUR CODE
+    ///<<< END WRITING YOUR CODE
 }
 
 ///<<< BEGIN WRITING YOUR CODE FILE_UNINIT

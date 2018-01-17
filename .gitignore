@@ -45,3 +45,4 @@ sysinfo.txt
 # vs code configuration
 .vs/
 .vscode/
+/Assets/VSCode/

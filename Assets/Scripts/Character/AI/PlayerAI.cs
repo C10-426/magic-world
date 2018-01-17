@@ -14,31 +14,31 @@ using UnityEngine;
 
 namespace GameGeek.Character
 {
-    ///<<< BEGIN WRITING YOUR CODE NAMESPACE_INIT
+///<<< BEGIN WRITING YOUR CODE NAMESPACE_INIT
 
     ///<<< END WRITING YOUR CODE
 
-    public class PlayerAI : GameGeek.Character.CharacterPlayer
-    ///<<< BEGIN WRITING YOUR CODE PlayerAI
+	public class PlayerAI : GameGeek.Character.CharacterPlayer
+///<<< BEGIN WRITING YOUR CODE PlayerAI
     ///<<< END WRITING YOUR CODE
-    {
-        public behaviac.EBTStatus Idle()
-        {
-            ///<<< BEGIN WRITING YOUR CODE Idle
+	{
+		public behaviac.EBTStatus Idle()
+		{
+///<<< BEGIN WRITING YOUR CODE Idle
             return behaviac.EBTStatus.BT_INVALID;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public bool IsUserControlMovement()
-        {
-            ///<<< BEGIN WRITING YOUR CODE IsUserControlMovement
+		public bool IsUserControlMovement()
+		{
+///<<< BEGIN WRITING YOUR CODE IsUserControlMovement
             return moveJoyStick != null && moveJoyStick.MoveInput().x != 0;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus Move()
-        {
-            ///<<< BEGIN WRITING YOUR CODE Move.
+		public behaviac.EBTStatus Move()
+		{
+///<<< BEGIN WRITING YOUR CODE Move
             if (IsUserControlMovement())
             {
                 currentStatus = GameGeek.Character.PlayerStatus.RUN;
@@ -47,11 +47,11 @@ namespace GameGeek.Character
                 moveJoyStick.Rotate(transform, 15.0F);                           //Rotate rigidbody; 
                 return behaviac.EBTStatus.BT_RUNNING;
             }
-            return behaviac.EBTStatus.BT_INVALID;
+            return behaviac.EBTStatus.BT_RUNNING;
             ///<<< END WRITING YOUR CODE
 		}
 
-        ///<<< BEGIN WRITING YOUR CODE CLASS_PART
+///<<< BEGIN WRITING YOUR CODE CLASS_PART
 
         private static readonly string ANIMATOR_RUN = "Run";
         private static readonly string ANIMATOR_ATTACK = "Attack";
@@ -131,9 +131,9 @@ namespace GameGeek.Character
         }
         ///<<< END WRITING YOUR CODE
 
-    }
+	}
 
-    ///<<< BEGIN WRITING YOUR CODE NAMESPACE_UNINIT
+///<<< BEGIN WRITING YOUR CODE NAMESPACE_UNINIT
 
     ///<<< END WRITING YOUR CODE
 }

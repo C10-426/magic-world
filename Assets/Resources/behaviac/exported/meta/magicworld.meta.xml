@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
-<agents version="1" signature="1526623296">
+<agents version="1" signature="9055633">
   <agent type="GameGeek::Character::Character" base="behaviac::Agent" signature="277886623">
     <properties>
       <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
@@ -68,6 +68,12 @@
       <property name="characterType" type="GameGeek::Character::CharacterType" member="false" static="false" defaultvalue="CT_NULL" />
       <property name="currentStatus" type="GameGeek::Character::PlayerStatus" member="false" static="false" defaultvalue="IDLE" />
       <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
+    </properties>
+  </agent>
+  <agent type="GameGeek::Character::Appear" base="behaviac::Agent" signature="3344675134">
+    <properties>
+      <property name="animationName" type="string" member="false" static="false" defaultvalue="" />
+      <property name="isAppearActive" type="bool" member="false" static="false" defaultvalue="false" />
     </properties>
   </agent>
 </agents>

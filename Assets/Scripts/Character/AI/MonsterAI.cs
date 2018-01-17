@@ -16,35 +16,35 @@ using UnityEngine;
 
 namespace GameGeek.Character
 {
-    ///<<< BEGIN WRITING YOUR CODE NAMESPACE_INIT
+///<<< BEGIN WRITING YOUR CODE NAMESPACE_INIT
 
     ///<<< END WRITING YOUR CODE
 
-    public class MonsterAI : GameGeek.Character.CharacterMonster
-    ///<<< BEGIN WRITING YOUR CODE MonsterAI
+	public class MonsterAI : GameGeek.Character.CharacterMonster
+///<<< BEGIN WRITING YOUR CODE MonsterAI
     ///<<< END WRITING YOUR CODE
-    {
-        public behaviac.EBTStatus Attack()
-        {
-            ///<<< BEGIN WRITING YOUR CODE Attack
+	{
+		public behaviac.EBTStatus Attack()
+		{
+///<<< BEGIN WRITING YOUR CODE Attack
             if (isDebug)
                 behaviac.Debug.LogWarning("Attack");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus CanSeeObject()
-        {
-            ///<<< BEGIN WRITING YOUR CODE CanSeeObject
+		public behaviac.EBTStatus CanSeeObject()
+		{
+///<<< BEGIN WRITING YOUR CODE CanSeeObject
             if (isDebug)
                 behaviac.Debug.LogWarning("CanSeeObject");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus GetCurrentHealth()
-        {
-            ///<<< BEGIN WRITING YOUR CODE GetCurrentHealth
+		public behaviac.EBTStatus GetCurrentHealth()
+		{
+///<<< BEGIN WRITING YOUR CODE GetCurrentHealth
             if (isDebug)
                 behaviac.Debug.LogWarning("GetCurrentHealth");
             if (property.hp > 0)
@@ -55,9 +55,9 @@ namespace GameGeek.Character
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus IsAlive()
-        {
-            ///<<< BEGIN WRITING YOUR CODE IsAlive
+		public behaviac.EBTStatus IsAlive()
+		{
+///<<< BEGIN WRITING YOUR CODE IsAlive
             if (isDebug)
                 behaviac.Debug.LogWarning("IsAlive");
             if (property.hp > 0)
@@ -68,70 +68,70 @@ namespace GameGeek.Character
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus IsDamaged()
-        {
-            ///<<< BEGIN WRITING YOUR CODE IsDamaged
+		public behaviac.EBTStatus IsDamaged()
+		{
+///<<< BEGIN WRITING YOUR CODE IsDamaged
             if (isDebug)
                 behaviac.Debug.LogWarning("IsDamaged");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus Patrol()
-        {
-            ///<<< BEGIN WRITING YOUR CODE Patrol
+		public behaviac.EBTStatus Patrol()
+		{
+///<<< BEGIN WRITING YOUR CODE Patrol
             if (isDebug)
                 behaviac.Debug.LogWarning("Patrol");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus RotateTowards()
-        {
-            ///<<< BEGIN WRITING YOUR CODE RotateTowards
+		public behaviac.EBTStatus RotateTowards()
+		{
+///<<< BEGIN WRITING YOUR CODE RotateTowards
             if (isDebug)
                 behaviac.Debug.LogWarning("RotateTowards");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus Seek()
-        {
-            ///<<< BEGIN WRITING YOUR CODE Seek
+		public behaviac.EBTStatus Seek()
+		{
+///<<< BEGIN WRITING YOUR CODE Seek
             if (isDebug)
                 behaviac.Debug.LogWarning("Seek");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus ShowAnimation()
-        {
-            ///<<< BEGIN WRITING YOUR CODE ShowAnimation
+		public behaviac.EBTStatus ShowAnimation()
+		{
+///<<< BEGIN WRITING YOUR CODE ShowAnimation
             if (isDebug)
                 behaviac.Debug.LogWarning("ShowAnimation");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus Wander()
-        {
-            ///<<< BEGIN WRITING YOUR CODE Wander
+		public behaviac.EBTStatus Wander()
+		{
+///<<< BEGIN WRITING YOUR CODE Wander
             if (isDebug)
                 behaviac.Debug.LogWarning("Wander");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
-        public behaviac.EBTStatus WithinDistance()
-        {
-            ///<<< BEGIN WRITING YOUR CODE WithinDistance
+		public behaviac.EBTStatus WithinDistance()
+		{
+///<<< BEGIN WRITING YOUR CODE WithinDistance
             if (isDebug)
                 behaviac.Debug.LogWarning("WithinDistance");
             return behaviac.EBTStatus.BT_SUCCESS;
             ///<<< END WRITING YOUR CODE
 		}
 
-        ///<<< BEGIN WRITING YOUR CODE CLASS_PART
+///<<< BEGIN WRITING YOUR CODE CLASS_PART
 
         private bool isDebug = false;
 
@@ -162,9 +162,9 @@ namespace GameGeek.Character
 
         ///<<< END WRITING YOUR CODE
 
-    }
+	}
 
-    ///<<< BEGIN WRITING YOUR CODE NAMESPACE_UNINIT
+///<<< BEGIN WRITING YOUR CODE NAMESPACE_UNINIT
 
     ///<<< END WRITING YOUR CODE
 }

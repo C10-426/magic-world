@@ -36,6 +36,16 @@
       <enum NativeValue="GameGeek::Character::RUN" Value="RUN" DisplayName="RUN" Desc="" MemberValue="1" />
       <enum NativeValue="GameGeek::Character::ATTACK" Value="ATTACK" DisplayName="ATTACK" Desc="" MemberValue="2" />
     </enumtype>
+    <enumtype Type="GameGeek::Character::AppearStatus" Namespace="GameGeek::Character" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Appear" DisplayName="AppearStatus" Desc="AppearStatus">
+      <enum NativeValue="GameGeek::Character::AS_NULL" Value="AS_NULL" DisplayName="AS_NULL" Desc="" MemberValue="0" />
+      <enum NativeValue="GameGeek::Character::AS_IDLE" Value="AS_IDLE" DisplayName="AS_IDLE" Desc="" MemberValue="1" />
+      <enum NativeValue="GameGeek::Character::AS_MOVE" Value="AS_MOVE" DisplayName="AS_MOVE" Desc="" MemberValue="2" />
+      <enum NativeValue="GameGeek::Character::AS_ATTACK" Value="AS_ATTACK" DisplayName="AS_ATTACK" Desc="" MemberValue="3" />
+      <enum NativeValue="GameGeek::Character::AS_SKILL" Value="AS_SKILL" DisplayName="AS_SKILL" Desc="" MemberValue="4" />
+      <enum NativeValue="GameGeek::Character::AS_DEFENSE" Value="AS_DEFENSE" DisplayName="AS_DEFENSE" Desc="" MemberValue="5" />
+      <enum NativeValue="GameGeek::Character::AS_KNOCKING_UP" Value="AS_KNOCKING_UP" DisplayName="AS_KNOCKING_UP" Desc="" MemberValue="6" />
+      <enum NativeValue="GameGeek::Character::AS_DIE" Value="AS_DIE" DisplayName="AS_DIE" Desc="" MemberValue="7" />
+    </enumtype>
   </types>
   <agents>
     <agent classfullname="behaviac::Agent" DisplayName="behaviac::Agent" Desc="behaviac::Agent" IsRefType="true" IsImplemented="true">
@@ -113,6 +123,15 @@
       <Method Name="IsUserControlMovement" DisplayName="IsUserControlMovement" Desc="IsUserControlMovement" Class="GameGeek::Character::PlayerAI" ReturnType="bool" ReturnTypeFullName="System.Boolean" Static="false" Public="true" istask="false" />
       <Method Name="Move" DisplayName="Move" Desc="Move" Class="GameGeek::Character::PlayerAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
       <Method Name="Idle" DisplayName="Idle" Desc="Idle" Class="GameGeek::Character::PlayerAI" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+    </agent>
+    <agent classfullname="GameGeek::Character::Appear" base="behaviac::Agent" DisplayName="Appear" Desc="Appear" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Appear">
+      <Member Name="animationName" DisplayName="animationName" Desc="animationName" Class="GameGeek::Character::Appear" Type="string" TypeFullName="System.String" defaultvalue="" Static="false" Public="true" Readonly="false" />
+      <Member Name="isAppearActive" DisplayName="isAppearActive" Desc="isAppearActive" Class="GameGeek::Character::Appear" Type="bool" TypeFullName="System.Boolean" defaultvalue="false" Static="false" Public="true" Readonly="false" />
+      <Method Name="ActiveAppear" DisplayName="ActiveAppear" Desc="ActiveAppear" Class="GameGeek::Character::Appear" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="DeactiveAppear" DisplayName="DeactiveAppear" Desc="DeactiveAppear" Class="GameGeek::Character::Appear" ReturnType="behaviac::EBTStatus" ReturnTypeFullName="XMLPluginBehaviac.behaviac_EBTStatus" Static="false" Public="true" istask="false" />
+      <Method Name="IsAppearActive" DisplayName="IsAppearActive" Desc="IsAppearActive" Class="GameGeek::Character::Appear" ReturnType="bool" ReturnTypeFullName="System.Boolean" Static="false" Public="true" istask="false" />
+      <Method Name="OnAppearActive" DisplayName="OnAppearActive" Desc="OnAppearActive" Class="GameGeek::Character::Appear" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="true" istask="false" />
+      <Method Name="OnAppearDeactive" DisplayName="OnAppearDeactive" Desc="OnAppearDeactive" Class="GameGeek::Character::Appear" ReturnType="void" ReturnTypeFullName="System.Void" Static="false" Public="true" istask="false" />
     </agent>
   </agents>
   <instances />

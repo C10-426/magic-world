@@ -2,21 +2,23 @@ using GameGeek.Character;
 
 public class Skill
 {
-    private Character _owner;
-    private string _resName;
+    private Character owner;
+    private string resName;
     public SkillType type;
     public SkillProperty property;
+
+    private SkillAppear appear;
 
     public string ResName
     {
         get
         {
-            return _resName;
+            return resName;
         }
 
         set
         {
-            _resName = value;
+            resName = value;
         }
     }
 
@@ -24,20 +26,44 @@ public class Skill
     {
         get
         {
-            return _owner;
+            return owner;
         }
 
         set
         {
-            _owner = value;
+            owner = value;
+        }
+    }
+
+    public SkillAppear Appear
+    {
+        get
+        {
+            return appear;
+        }
+
+        set
+        {
+            appear = value;
         }
     }
 
     public Skill(Character owner, string resName)
     {
-        _owner = owner;
+        Owner = owner;
         ResName = resName;
     }
 
-    
+    public bool IsNormalAttack()
+    {
+        // TODO @Leo
+        return true;
+    }
+
+    public SkillAppear create(int skillId)
+    {
+        SkillAppear appear = new SkillAppear();
+        appear.SetOwner(owner);
+        return appear;
+    }
 }

@@ -6,8 +6,6 @@ using UnityEngine.EventSystems;
 
 public class AttackController : MonoBehaviour, IPointerClickHandler {
 
-	public event Action OnAttackClicked;
-
 	// Use this for initialization
 	void Start () {
 		
@@ -19,8 +17,6 @@ public class AttackController : MonoBehaviour, IPointerClickHandler {
 	}
 
 	void IPointerClickHandler.OnPointerClick(PointerEventData eventData) {
-		if (OnAttackClicked != null) {
-			OnAttackClicked ();
-		}
+		EventBus.GetDefault().Post(new AttackEvent(eventData));
 	}
 }

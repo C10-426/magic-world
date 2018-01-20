@@ -1,12 +1,11 @@
 
 using GameGeek.Character;
 
-public class IdleAppear : Appear {
-
-    public IdleAppear()
+public class IdleAppear : Appear
+{
+    public IdleAppear(AppearStatus appearStatus, string animationName)
     {
-        appearStatus = AppearStatus.AS_IDLE;
-        animationName = "Idle";
+        this.appearStatus = appearStatus;
+        this.animationName = animationName;
     }
-
 }

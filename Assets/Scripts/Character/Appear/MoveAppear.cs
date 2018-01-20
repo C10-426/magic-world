@@ -1,12 +1,11 @@
 
 using GameGeek.Character;
 
-public class MoveAppear : Appear {
-
-    public MoveAppear()
+public class MoveAppear : Appear
+{
+    public MoveAppear(AppearStatus appearStatus, string animationName)
     {
-        appearStatus = AppearStatus.AS_IDLE;
-        animationName = "Move";
+        this.appearStatus = appearStatus;
+        this.animationName = animationName;
     }
-
 }

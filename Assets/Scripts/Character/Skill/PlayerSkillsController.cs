@@ -42,8 +42,6 @@ public class PlayerSkillsController : MonoBehaviour
 
     private List<SkillUI> skillUIs;
 
-    public event Action<SkillData> OnPlayerSkillClicked;
-
     /*
      * Constant for positioning the Skill UI.
      */
@@ -143,6 +141,6 @@ public class PlayerSkillsController : MonoBehaviour
     /************************ Event Handler ************************/
 
     void HandleSkillClicked(SkillData skillData) {
-        this.OnPlayerSkillClicked(skillData);
+        EventBus.GetDefault().Post(new ReleaseSkillEvent(skillData));
     }
 }

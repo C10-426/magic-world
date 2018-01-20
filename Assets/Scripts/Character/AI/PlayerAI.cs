@@ -82,6 +82,7 @@ namespace GameGeek.Character
             InitPlayerAI();
             charaterController = GetComponent<CharacterController>();
             animator = GetComponent<Animator>();
+            EventBus.GetDefault().Register(this);
             AddEventListener();
         }
 
@@ -91,10 +92,6 @@ namespace GameGeek.Character
             moveJoyStick.OnStartJoystickMovement += HandleMovement;
             moveJoyStick.OnJoystickMovement += HandleMovement;
             moveJoyStick.OnEndJoystickMovement += HandleEndMovement;
-            // attack
-            attackController.OnAttackClicked += HandleAttack;
-            // skill
-            skillController.OnPlayerSkillClicked += HandleSkill;
         }
 
         void HandleMovement(Joystick sender, Vector2 vector)
@@ -114,7 +111,8 @@ namespace GameGeek.Character
             }
         }
 
-        void HandleAttack()
+        [Subscribe]
+        public void OnAttackBtnClick(AttackEvent attack)
         {
             if (animator != null)
             {
@@ -122,12 +120,18 @@ namespace GameGeek.Character
             }
         }
 
-        void HandleSkill(SkillData skillData)
+        [Subscribe]
+        public void OnSkillBtnClick(ReleaseSkillEvent notification)
         {
-            if (null != skillData.getTrigger())
+            if (null != notification.eventData.getTrigger())
             {
-                animator.SetTrigger(skillData.getTrigger());
+                animator.SetTrigger(notification.eventData.getTrigger());
             }
+        }
+
+        void Destory()
+        {
+            EventBus.GetDefault().Unregister(this);
         }
         ///<<< END WRITING YOUR CODE
 

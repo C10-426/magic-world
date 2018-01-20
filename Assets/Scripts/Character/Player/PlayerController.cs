@@ -44,10 +44,6 @@ public class PlayerController : MonoBehaviour {
         moveJoy.OnStartJoystickMovement += HandleStartMovement;
         moveJoy.OnJoystickMovement += HandleMovement;
         moveJoy.OnEndJoystickMovement += HandleEndMovement;
-        // attack
-        attack.OnAttackClicked += HandleAttack;
-        // skill
-        skills.OnPlayerSkillClicked += HandleSkill;
     }
 
 	void HandleStartMovement(Joystick sender, Vector2 vector)

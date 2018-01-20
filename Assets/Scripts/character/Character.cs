@@ -42,6 +42,14 @@ namespace GameGeek.Character
                 _status = this.btexec();
             }
         }
+
+        public void ReleaseSkill(Character target, int skillId)
+        {
+            // get skill by skill id
+            // reduce mp
+            // notify the AI instance to release skill by event system
+            
+        }
         ///<<< END WRITING YOUR CODE
 
 	}

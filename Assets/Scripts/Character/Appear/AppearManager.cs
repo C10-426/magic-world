@@ -2,15 +2,11 @@
 using GameGeek.Character;
 using UnityEngine;
 
-public class AppearManager
+public abstract class AppearManager
 {
 
     public Character owner;
     private Appear current;
-
-    public AppearManager()
-    {
-    }
 
     public void ChangeAppear(Appear next)
     {
@@ -30,15 +26,11 @@ public class AppearManager
 
     public void ChangeAppear(AppearStatus appearStatus)
     {
-        switch (appearStatus)
-        {
-            case AppearStatus.AS_IDLE:
-                ChangeAppear(new IdleAppear());
-                break;
-            case AppearStatus.AS_MOVE:
-                ChangeAppear(new MoveAppear());
-                break;
-        }
+        ChangeAppear(create(appearStatus));
     }
+
+    protected abstract Appear create(AppearStatus appearStatus);
+
+    protected abstract Appear create(SkillData skillData);
 
 }

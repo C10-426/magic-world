@@ -121,21 +121,13 @@ public class PlayerSkillsController : MonoBehaviour
     private SkillData getSkillData(int i) {
         switch (i) {
             case 0:
-                return setSkillData(1, 1, "Skill_1");
+                return SkillManager.GetInstance().FindOrCreate(SkillManager.SI_SKILL_1).property;
             case 1:
-                return setSkillData(2, 2, "Skill_2");
+                return SkillManager.GetInstance().FindOrCreate(SkillManager.SI_SKILL_2).property;
             default:
                 break;
         }
         return null;
-    }
-
-    private SkillData setSkillData(float cd, float damage, string trigger) {
-        SkillData data = new SkillData();
-        data.setCD(cd);
-        data.setDamage(damage);
-        data.setTrigger(trigger);
-        return data;
     }
 
     /************************ Event Handler ************************/

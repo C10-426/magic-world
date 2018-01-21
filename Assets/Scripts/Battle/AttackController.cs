@@ -17,6 +17,6 @@ public class AttackController : MonoBehaviour, IPointerClickHandler {
 	}
 
 	void IPointerClickHandler.OnPointerClick(PointerEventData eventData) {
-		EventBus.GetDefault().Post(new AttackEvent(eventData));
+		EventBus.GetDefault().Post(new AttackEvent(SkillManager.SI_ATTACK));
 	}
 }

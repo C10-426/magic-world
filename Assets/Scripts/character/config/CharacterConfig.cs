@@ -17,4 +17,7 @@ public class CharacterConfig
         // property.moveSpeed = 0.6f;
         return property;
     }
+
+   
+
 }

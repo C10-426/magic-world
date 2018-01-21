@@ -32,7 +32,7 @@ namespace GameGeek.Character
 		public bool IsUserControlMovement()
 		{
 ///<<< BEGIN WRITING YOUR CODE IsUserControlMovement
-            return moveJoyStick != null && moveJoyStick.MoveInput().x != 0;
+            return moveJoyStick != null && (moveJoyStick.MoveInput().x != 0 || moveJoyStick.MoveInput().y != 0);
             ///<<< END WRITING YOUR CODE
 		}
 
@@ -114,19 +114,13 @@ namespace GameGeek.Character
         [Subscribe]
         public void OnAttackBtnClick(AttackEvent attack)
         {
-            if (animator != null)
-            {
-                animator.SetTrigger(ANIMATOR_ATTACK);
-            }
+            SkillManager.GetInstance().ReleaseSkill(this, attack.attackSkillId);
         }
 
         [Subscribe]
         public void OnSkillBtnClick(ReleaseSkillEvent notification)
         {
-            if (null != notification.eventData.getTrigger())
-            {
-                animator.SetTrigger(notification.eventData.getTrigger());
-            }
+            SkillManager.GetInstance().ReleaseSkill(this, notification.eventData.Id);
         }
 
         void Destory()

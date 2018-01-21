@@ -1,11 +1,12 @@
 using GameGeek.Character;
+using UnityEngine;
 
 public class Skill
 {
     private Character owner;
     private string resName;
     public SkillType type;
-    public SkillProperty property;
+    public SkillData property;
 
     private SkillAppear appear;
 
@@ -48,10 +49,22 @@ public class Skill
         }
     }
 
-    public Skill(Character owner, string resName)
+    public Skill()
+    {
+        property = new SkillData();
+    }
+
+    public Skill(int skillId)
+    {
+        property = new SkillData();
+        property.Id = skillId;
+    }
+
+    public Skill(Character owner, int skillId)
     {
         Owner = owner;
-        ResName = resName;
+        property = new SkillData();
+        property.Id = skillId;
     }
 
     public bool IsNormalAttack()
@@ -66,4 +79,15 @@ public class Skill
         appear.SetOwner(owner);
         return appear;
     }
+
+    public void Execute()
+    {
+        Animator animator = owner.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetTrigger(property.Trigger);
+        }
+    }
+
 }
+

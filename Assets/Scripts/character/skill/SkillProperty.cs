@@ -1,6 +1,7 @@
 namespace GameGeek.Character {
     public class SkillProperty
     {
+        public int skillId;
         public string name;
         public int level;
         public float defense;

@@ -2,31 +2,60 @@
 
 public class SkillData 
 {
+    private int id;
     private float cd;
     private float damage;
     private string trigger;
 
-    public float getCD() {
-        return cd;
+    public int Id
+    {
+        get
+        {
+            return id;
+        }
+
+        set
+        {
+            id = value;
+        }
     }
 
-    public float getDamage() {
-        return damage;
+    public float Cd
+    {
+        get
+        {
+            return cd;
+        }
+
+        set
+        {
+            cd = value;
+        }
     }
 
-    public string getTrigger() {
-        return trigger;
+    public float Damage
+    {
+        get
+        {
+            return damage;
+        }
+
+        set
+        {
+            damage = value;
+        }
     }
 
-    public void setCD(float cd) {
-        this.cd = cd;
-    }
+    public string Trigger
+    {
+        get
+        {
+            return trigger;
+        }
 
-    public void setDamage(float damage) {
-        this.damage = damage;
-    }
-
-    public void setTrigger(string trigger) {
-        this.trigger = trigger;
+        set
+        {
+            trigger = value;
+        }
     }
 }

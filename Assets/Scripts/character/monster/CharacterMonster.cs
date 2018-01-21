@@ -37,10 +37,10 @@ namespace GameGeek.Character
         property = CharacterConfig.GetDefaultCharacterProperty();
         MonsterManager.GetInstance().AddMonster(this);
         skills = new List<Skill>();
-        skills.Add(new Skill(this, "attack1"));
-        skills.Add(new Skill(this, "attack2"));
-        skills.Add(new Skill(this, "hit1"));
-        skills.Add(new Skill(this, "hit2"));
+        skills.Add(SkillFactory.GetInstance().Create(1));
+        skills.Add(SkillFactory.GetInstance().Create(2));
+        skills.Add(SkillFactory.GetInstance().Create(3));
+        skills.Add(SkillFactory.GetInstance().Create(4));
 
         // patrol
         // navMeshAgent = GetComponent<NavMeshAgent>();

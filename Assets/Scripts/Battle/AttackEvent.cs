@@ -3,10 +3,10 @@ using UnityEngine.EventSystems;
 
 public class AttackEvent
 {
-    public PointerEventData eventData;
+    public int attackSkillId;
 
-    public AttackEvent(PointerEventData eventData)
+    public AttackEvent(int attackSkillId)
     {
-        this.eventData = eventData;
+        this.attackSkillId = attackSkillId;
     }
 }

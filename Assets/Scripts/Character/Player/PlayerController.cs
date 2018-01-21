@@ -76,8 +76,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
     void HandleSkill(SkillData skillData) {
-        if (null != skillData.getTrigger()) {
-            animator.SetTrigger(skillData.getTrigger());
+        if (null != skillData.Trigger) {
+            animator.SetTrigger(skillData.Trigger);
         }
     }
 

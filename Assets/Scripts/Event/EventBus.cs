@@ -108,13 +108,20 @@ public class EventBus
         if (!currentPostingThreadState.isPosting)
         {
             currentPostingThreadState.isPosting = true;
-            while (currentPostingThreadState.eventQueue.Count > 0)
+            try
             {
-                object nextNotification = currentPostingThreadState.eventQueue[0];
-                currentPostingThreadState.eventQueue.Remove(nextNotification);
-                PostSingleEvent(nextNotification, currentPostingThreadState);
-            };
-            currentPostingThreadState.isPosting = false;
+                while (currentPostingThreadState.eventQueue.Count > 0)
+                {
+                    object nextNotification = currentPostingThreadState.eventQueue[0];
+                    currentPostingThreadState.eventQueue.Remove(nextNotification);
+                    PostSingleEvent(nextNotification, currentPostingThreadState);
+                };
+            }
+            finally
+            {
+
+                currentPostingThreadState.isPosting = false;
+            }
         }
     }
 

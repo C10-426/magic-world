@@ -35,23 +35,25 @@
       <property name="property" type="GameGeek::Character::CharacterProperty*" member="false" static="false" defaultvalue="null" />
     </properties>
   </agent>
-  <agent type="GameGeek::Character::CharacterProperty" base="behaviac::Agent" signature="4099493770">
+  <agent type="GameGeek::Character::CharacterProperty" base="behaviac::Agent" signature="629191522">
     <properties>
       <property name="damage" type="float" member="false" static="false" defaultvalue="20" />
       <property name="defanse" type="int" member="false" static="false" defaultvalue="12" />
       <property name="hp" type="int" member="false" static="false" defaultvalue="100" />
+      <property name="id" type="int" member="false" static="false" defaultvalue="0" />
       <property name="level" type="int" member="false" static="false" defaultvalue="0" />
       <property name="mp" type="int" member="false" static="false" defaultvalue="80" />
       <property name="walkSpeed" type="float" member="false" static="false" defaultvalue="5" />
     </properties>
   </agent>
-  <agent type="GameGeek::Character::PlayerCharacterProperty" base="GameGeek::Character::CharacterProperty" signature="217385119">
+  <agent type="GameGeek::Character::PlayerCharacterProperty" base="GameGeek::Character::CharacterProperty" signature="968093694">
     <properties>
       <property name="damage" type="float" member="false" static="false" defaultvalue="20" />
       <property name="defanse" type="int" member="false" static="false" defaultvalue="12" />
       <property name="experience" type="int" member="false" static="false" defaultvalue="0" />
       <property name="gender" type="GameGeek::Character::GenderType" member="false" static="false" defaultvalue="UNKNOW" />
       <property name="hp" type="int" member="false" static="false" defaultvalue="100" />
+      <property name="id" type="int" member="false" static="false" defaultvalue="0" />
       <property name="level" type="int" member="false" static="false" defaultvalue="0" />
       <property name="mp" type="int" member="false" static="false" defaultvalue="80" />
       <property name="walkSpeed" type="float" member="false" static="false" defaultvalue="5" />

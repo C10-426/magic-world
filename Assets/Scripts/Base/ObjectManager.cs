@@ -5,23 +5,16 @@ using System;
 using System.Collections.Generic;
 using GameGeek.Character;
 
-public abstract class ObjectManager<M, T> : IManager<T> where M : IManager<T>, new() where T : new()
+public abstract class ObjectManager<M, T> : ObjectInstance<M>, IManager<T> where M : ObjectInstance<M>, IManager<T>, new() where T : new()
 {
-    private static M sInstance;
-    private int incrementalId = 0;
     private readonly Dictionary<int, T> objPool = new Dictionary<int, T>();
 
-    public ObjectManager()
+    protected Dictionary<int, T> ObjPool
     {
-    }
-
-    public static M GetInstance()
-    {
-        if (sInstance == null)
+        get
         {
-            sInstance = new M();
+            return objPool;
         }
-        return sInstance;
     }
 
     public T Create(int id)
@@ -54,7 +47,7 @@ public abstract class ObjectManager<M, T> : IManager<T> where M : IManager<T>, n
         T obj = Find(id);
         if (obj == null)
         {
-            UnityEngine.Debug.Log("can't find obj , id = " + id +" , and then create it.");
+            UnityEngine.Debug.Log("can't find obj , id = " + id + " , and then create it.");
             obj = Create(id);
         }
         return obj;

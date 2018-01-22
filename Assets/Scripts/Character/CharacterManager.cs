@@ -18,6 +18,7 @@ public class CharacterManager : ObjectManager<CharacterManager, Character>
         GameObject characterGO = new GameObject(id.ToString());
         Character character = characterGO.AddComponent<Character>();
         character.property = CharacterConfig.GetDefaultCharacterProperty();
+        character.property.id = id;
         characterGO.transform.SetParent(characterRoot);
         return character;
     }

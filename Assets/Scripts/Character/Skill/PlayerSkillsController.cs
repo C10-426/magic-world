@@ -121,9 +121,9 @@ public class PlayerSkillsController : MonoBehaviour
     private SkillData getSkillData(int i) {
         switch (i) {
             case 0:
-                return SkillManager.GetInstance().FindOrCreate(SkillManager.SI_SKILL_1).property;
+                return SkillManager.Instance().FindOrCreate(SkillManager.SI_SKILL_1).property;
             case 1:
-                return SkillManager.GetInstance().FindOrCreate(SkillManager.SI_SKILL_2).property;
+                return SkillManager.Instance().FindOrCreate(SkillManager.SI_SKILL_2).property;
             default:
                 break;
         }

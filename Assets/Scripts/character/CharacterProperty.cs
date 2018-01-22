@@ -28,6 +28,8 @@ namespace GameGeek.Character
 
 		public int hp = 100;
 
+		public int id = 0;
+
 		public int level = 0;
 
 		public int mp = 80;

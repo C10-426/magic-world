@@ -114,13 +114,13 @@ namespace GameGeek.Character
         [Subscribe]
         public void OnAttackBtnClick(AttackEvent attack)
         {
-            SkillManager.GetInstance().ReleaseSkill(this, attack.attackSkillId);
+            SkillManager.Instance().ReleaseSkill(this, attack.attackSkillId);
         }
 
         [Subscribe]
         public void OnSkillBtnClick(ReleaseSkillEvent notification)
         {
-            SkillManager.GetInstance().ReleaseSkill(this, notification.eventData.Id);
+            SkillManager.Instance().ReleaseSkill(this, notification.eventData.Id);
         }
 
         void Destory()

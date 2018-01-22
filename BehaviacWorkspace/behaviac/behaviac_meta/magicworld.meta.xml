@@ -101,6 +101,7 @@
       <Member Name="damage" DisplayName="damage" Desc="damage" Class="GameGeek::Character::CharacterProperty" Type="float" TypeFullName="System.Single" defaultvalue="20" Static="false" Public="true" Readonly="false" />
       <Member Name="level" DisplayName="level" Desc="level" Class="GameGeek::Character::CharacterProperty" Type="int" TypeFullName="System.Int32" defaultvalue="0" Static="false" Public="true" Readonly="false" />
       <Member Name="walkSpeed" DisplayName="walkSpeed" Desc="walkSpeed" Class="GameGeek::Character::CharacterProperty" Type="float" TypeFullName="System.Single" defaultvalue="5" Static="false" Public="true" Readonly="false" />
+      <Member Name="id" DisplayName="id" Desc="id" Class="GameGeek::Character::CharacterProperty" Type="int" TypeFullName="System.Int32" defaultvalue="0" Static="false" Public="true" Readonly="false" />
     </agent>
     <agent classfullname="GameGeek::Character::PlayerCharacterProperty" base="GameGeek::Character::CharacterProperty" DisplayName="PlayerCharacterProperty" Desc="PlayerCharacterProperty" IsRefType="true" IsCustomized="true" ExportLocation="../Assets/Scripts/Character/Player">
       <Member Name="experience" DisplayName="experience" Desc="experience" Class="GameGeek::Character::PlayerCharacterProperty" Type="int" TypeFullName="System.Int32" defaultvalue="0" Static="false" Public="true" Readonly="false" />

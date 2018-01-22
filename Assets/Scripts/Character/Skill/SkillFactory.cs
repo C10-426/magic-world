@@ -2,24 +2,14 @@
 
 using System.Collections.Generic;
 
-public class SkillFactory : IFactory<Skill>
+public class SkillFactory : ObjectInstance<SkillFactory>, IFactory<Skill>
 {
-    private static SkillFactory sInstance;
     private readonly Dictionary<int, SkillData> dataSource;
 
-    private SkillFactory()
+    public SkillFactory()
     {
         dataSource = new Dictionary<int, SkillData>();
         LoadConfig();
-    }
-
-    public static SkillFactory GetInstance()
-    {
-        if (sInstance == null)
-        {
-            sInstance = new SkillFactory();
-        }
-        return sInstance;
     }
 
     public void LoadConfig()

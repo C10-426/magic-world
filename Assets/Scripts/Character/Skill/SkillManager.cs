@@ -14,7 +14,7 @@ public class SkillManager : ObjectManager<SkillManager, Skill>
 
     public SkillManager()
     {
-        factory = SkillFactory.GetInstance();
+        factory = SkillFactory.Instance();
     }
 
     public override Skill CreateObject(int id)

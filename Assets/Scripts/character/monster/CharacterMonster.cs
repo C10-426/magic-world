@@ -29,18 +29,18 @@ namespace GameGeek.Character
     : base()
     {
         characterType = CharacterType.CT_MONSTER;
-        Init();
+        InitCharacterMonster();
     }
 
-	 private void Init()
+	 private void InitCharacterMonster()
     {
         property = CharacterConfig.GetDefaultCharacterProperty();
         MonsterManager.GetInstance().AddMonster(this);
         skills = new List<Skill>();
-        skills.Add(SkillFactory.GetInstance().Create(1));
-        skills.Add(SkillFactory.GetInstance().Create(2));
-        skills.Add(SkillFactory.GetInstance().Create(3));
-        skills.Add(SkillFactory.GetInstance().Create(4));
+        skills.Add(SkillFactory.Instance().Create(1));
+        skills.Add(SkillFactory.Instance().Create(2));
+        skills.Add(SkillFactory.Instance().Create(3));
+        skills.Add(SkillFactory.Instance().Create(4));
 
         // patrol
         // navMeshAgent = GetComponent<NavMeshAgent>();
